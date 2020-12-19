@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		A0CA6888258E570E009847DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA6887258E570E009847DF /* Preview Assets.xcassets */; };
 		A0CA688A258E570E009847DF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6889258E570E009847DF /* Persistence.swift */; };
 		A0CA688D258E570E009847DF /* GithubContributions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0CA688B258E570E009847DF /* GithubContributions.xcdatamodeld */; };
+		A0CA6897258E57E8009847DF /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A0CA6896258E57E8009847DF /* SwiftSoup */; };
+		A0CA689C258E5835009847DF /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA689B258E5835009847DF /* GitHub.swift */; };
+		A0CA68A0258E5E2F009847DF /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA689F258E5E2F009847DF /* Contribution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		A0CA6889258E570E009847DF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A0CA688C258E570E009847DF /* GithubContributions.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GithubContributions.xcdatamodel; sourceTree = "<group>"; };
 		A0CA688E258E570E009847DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0CA689B258E5835009847DF /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
+		A0CA689F258E5E2F009847DF /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CA6897258E57E8009847DF /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +62,8 @@
 		A0CA687F258E570B009847DF /* GithubContributions */ = {
 			isa = PBXGroup;
 			children = (
+				A0CA689A258E5814009847DF /* ViewModel */,
+				A0CA6899258E5810009847DF /* Model */,
 				A0CA6880258E570B009847DF /* GithubContributionsApp.swift */,
 				A0CA6882258E570B009847DF /* ContentView.swift */,
 				A0CA6884258E570E009847DF /* Assets.xcassets */,
@@ -75,6 +83,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A0CA6899258E5810009847DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0CA689F258E5E2F009847DF /* Contribution.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A0CA689A258E5814009847DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0CA689B258E5835009847DF /* GitHub.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +115,9 @@
 			dependencies = (
 			);
 			name = GithubContributions;
+			packageProductDependencies = (
+				A0CA6896258E57E8009847DF /* SwiftSoup */,
+			);
 			productName = GithubContributions;
 			productReference = A0CA687D258E570B009847DF /* GithubContributions.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +145,9 @@
 				Base,
 			);
 			mainGroup = A0CA6874258E570B009847DF;
+			packageReferences = (
+				A0CA6895258E57E8009847DF /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = A0CA687E258E570B009847DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -144,10 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CA689C258E5835009847DF /* GitHub.swift in Sources */,
 				A0CA688D258E570E009847DF /* GithubContributions.xcdatamodeld in Sources */,
 				A0CA688A258E570E009847DF /* Persistence.swift in Sources */,
 				A0CA6883258E570B009847DF /* ContentView.swift in Sources */,
 				A0CA6881258E570B009847DF /* GithubContributionsApp.swift in Sources */,
+				A0CA68A0258E5E2F009847DF /* Contribution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A0CA6895258E57E8009847DF /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A0CA6896258E57E8009847DF /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0CA6895258E57E8009847DF /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A0CA688B258E570E009847DF /* GithubContributions.xcdatamodeld */ = {
