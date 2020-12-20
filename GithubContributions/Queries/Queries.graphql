@@ -1,0 +1,19 @@
+query getUserContributions($login: String!) {
+    user(login: $login) {
+        contributionsCollection {
+            contributionCalendar {
+                colors
+                  totalContributions
+                  isHalloween
+                  weeks {
+                  contributionDays {
+                    color
+                    contributionCount
+                    date
+                    weekday
+                  }
+                }
+            }
+        }
+    }
+}

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A051033A258FE6DC00E2CC60 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = A0510339258FE6DC00E2CC60 /* Apollo */; };
+		A051033E258FEAD900E2CC60 /* UserDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */; };
 		A0CA6881258E570B009847DF /* GithubContributionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6880258E570B009847DF /* GithubContributionsApp.swift */; };
 		A0CA6883258E570B009847DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6882258E570B009847DF /* ContentView.swift */; };
 		A0CA6885258E570E009847DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA6884258E570E009847DF /* Assets.xcassets */; };
@@ -16,9 +18,57 @@
 		A0CA6897258E57E8009847DF /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A0CA6896258E57E8009847DF /* SwiftSoup */; };
 		A0CA689C258E5835009847DF /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA689B258E5835009847DF /* GitHub.swift */; };
 		A0CA68A0258E5E2F009847DF /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA689F258E5E2F009847DF /* Contribution.swift */; };
+		A0CA68A4258E8C41009847DF /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = A0CA68A3258E8C41009847DF /* Apollo */; };
+		A0CA68A7258E8D92009847DF /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = A0CA68A6258E8D92009847DF /* schema.json */; };
+		A0CA68AD258E8EE6009847DF /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A0CA68AC258E8EE6009847DF /* Queries.graphql */; };
+		A0CA68B1258E8FC7009847DF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68B0258E8FC7009847DF /* API.swift */; };
+		A0CA68B4258E904B009847DF /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68B3258E904B009847DF /* Network.swift */; };
+		A0CA68B7258E94AD009847DF /* UserContributionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68B6258E94AD009847DF /* UserContributionFetcher.swift */; };
+		A0CA68C0258EB01B009847DF /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68BF258EB01B009847DF /* SquareView.swift */; };
+		A0CA68C5258EB22C009847DF /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68C4258EB22C009847DF /* ColorExtension.swift */; };
+		A0DA35A4258FD216009F3038 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DA35A3258FD216009F3038 /* WidgetKit.framework */; };
+		A0DA35A6258FD216009F3038 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DA35A5258FD216009F3038 /* SwiftUI.framework */; };
+		A0DA35A9258FD216009F3038 /* GithubWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA35A8258FD216009F3038 /* GithubWidgets.swift */; };
+		A0DA35AC258FD218009F3038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DA35AB258FD218009F3038 /* Assets.xcassets */; };
+		A0DA35AE258FD218009F3038 /* GithubWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A0DA35AA258FD216009F3038 /* GithubWidgets.intentdefinition */; };
+		A0DA35AF258FD218009F3038 /* GithubWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A0DA35AA258FD216009F3038 /* GithubWidgets.intentdefinition */; };
+		A0DA35B2258FD218009F3038 /* GithubWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0DA35A1258FD216009F3038 /* GithubWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0DA35B9258FD233009F3038 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68B0258E8FC7009847DF /* API.swift */; };
+		A0DA35BA258FD235009F3038 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68B3258E904B009847DF /* Network.swift */; };
+		A0DA35BD258FD23D009F3038 /* UserContributionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68B6258E94AD009847DF /* UserContributionFetcher.swift */; };
+		A0DA35C0258FD243009F3038 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA689F258E5E2F009847DF /* Contribution.swift */; };
+		A0DA35C3258FD247009F3038 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68C4258EB22C009847DF /* ColorExtension.swift */; };
+		A0DA35C6258FD24B009F3038 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68BF258EB01B009847DF /* SquareView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A0DA35B0258FD218009F3038 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0CA6875258E570B009847DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0DA35A0258FD216009F3038;
+			remoteInfo = GithubWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0DA35B3258FD218009F3038 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A0DA35B2258FD218009F3038 /* GithubWidgetsExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A051032E258FE60700E2CC60 /* GithubContributions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubContributions.entitlements; sourceTree = "<group>"; };
+		A0510331258FE61100E2CC60 /* GithubWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataFetcher.swift; sourceTree = "<group>"; };
 		A0CA687D258E570B009847DF /* GithubContributions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubContributions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CA6880258E570B009847DF /* GithubContributionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubContributionsApp.swift; sourceTree = "<group>"; };
 		A0CA6882258E570B009847DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,6 +79,20 @@
 		A0CA688E258E570E009847DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0CA689B258E5835009847DF /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		A0CA689F258E5E2F009847DF /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
+		A0CA68A6258E8D92009847DF /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		A0CA68AC258E8EE6009847DF /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
+		A0CA68B0258E8FC7009847DF /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		A0CA68B3258E904B009847DF /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A0CA68B6258E94AD009847DF /* UserContributionFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContributionFetcher.swift; sourceTree = "<group>"; };
+		A0CA68BF258EB01B009847DF /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		A0CA68C4258EB22C009847DF /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		A0DA35A1258FD216009F3038 /* GithubWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GithubWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0DA35A3258FD216009F3038 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A0DA35A5258FD216009F3038 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A0DA35A8258FD216009F3038 /* GithubWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubWidgets.swift; sourceTree = "<group>"; };
+		A0DA35AA258FD216009F3038 /* GithubWidgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = GithubWidgets.intentdefinition; sourceTree = "<group>"; };
+		A0DA35AB258FD218009F3038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0DA35AD258FD218009F3038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +101,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0CA6897258E57E8009847DF /* SwiftSoup in Frameworks */,
+				A0CA68A4258E8C41009847DF /* Apollo in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0DA359E258FD216009F3038 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0DA35A6258FD216009F3038 /* SwiftUI.framework in Frameworks */,
+				A051033A258FE6DC00E2CC60 /* Apollo in Frameworks */,
+				A0DA35A4258FD216009F3038 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +121,10 @@
 		A0CA6874258E570B009847DF = {
 			isa = PBXGroup;
 			children = (
+				A0510331258FE61100E2CC60 /* GithubWidgetsExtension.entitlements */,
 				A0CA687F258E570B009847DF /* GithubContributions */,
+				A0DA35A7258FD216009F3038 /* GithubWidgets */,
+				A0DA35A2258FD216009F3038 /* Frameworks */,
 				A0CA687E258E570B009847DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A0CA687D258E570B009847DF /* GithubContributions.app */,
+				A0DA35A1258FD216009F3038 /* GithubWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,10 +141,16 @@
 		A0CA687F258E570B009847DF /* GithubContributions */ = {
 			isa = PBXGroup;
 			children = (
+				A051032E258FE60700E2CC60 /* GithubContributions.entitlements */,
+				A0CA68A6258E8D92009847DF /* schema.json */,
+				A0CA68BE258EB00A009847DF /* Views */,
+				A0CA68BA258EAFE0009847DF /* GraphQL */,
+				A0CA68AB258E8EB6009847DF /* Queries */,
 				A0CA689A258E5814009847DF /* ViewModel */,
 				A0CA6899258E5810009847DF /* Model */,
 				A0CA6880258E570B009847DF /* GithubContributionsApp.swift */,
 				A0CA6882258E570B009847DF /* ContentView.swift */,
+				A0CA68C4258EB22C009847DF /* ColorExtension.swift */,
 				A0CA6884258E570E009847DF /* Assets.xcassets */,
 				A0CA6889258E570E009847DF /* Persistence.swift */,
 				A0CA688E258E570E009847DF /* Info.plist */,
@@ -95,8 +180,55 @@
 			isa = PBXGroup;
 			children = (
 				A0CA689B258E5835009847DF /* GitHub.swift */,
+				A0CA68B6258E94AD009847DF /* UserContributionFetcher.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A0CA68AB258E8EB6009847DF /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				A0CA68AC258E8EE6009847DF /* Queries.graphql */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+		A0CA68BA258EAFE0009847DF /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				A0CA68B0258E8FC7009847DF /* API.swift */,
+				A0CA68B3258E904B009847DF /* Network.swift */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		A0CA68BE258EB00A009847DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0CA68BF258EB01B009847DF /* SquareView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0DA35A2258FD216009F3038 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA35A3258FD216009F3038 /* WidgetKit.framework */,
+				A0DA35A5258FD216009F3038 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0DA35A7258FD216009F3038 /* GithubWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA35A8258FD216009F3038 /* GithubWidgets.swift */,
+				A0DA35AA258FD216009F3038 /* GithubWidgets.intentdefinition */,
+				A0DA35AB258FD218009F3038 /* Assets.xcassets */,
+				A0DA35AD258FD218009F3038 /* Info.plist */,
+				A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */,
+			);
+			path = GithubWidgets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,21 +238,45 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0CA6891258E570E009847DF /* Build configuration list for PBXNativeTarget "GithubContributions" */;
 			buildPhases = (
+				A0CA68AA258E8E5E009847DF /* Generate Apollo GraphQL API */,
 				A0CA6879258E570B009847DF /* Sources */,
 				A0CA687A258E570B009847DF /* Frameworks */,
 				A0CA687B258E570B009847DF /* Resources */,
+				A0DA35B3258FD218009F3038 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0DA35B1258FD218009F3038 /* PBXTargetDependency */,
+			);
+			name = GithubContributions;
+			packageProductDependencies = (
+				A0CA6896258E57E8009847DF /* SwiftSoup */,
+				A0CA68A3258E8C41009847DF /* Apollo */,
+			);
+			productName = GithubContributions;
+			productReference = A0CA687D258E570B009847DF /* GithubContributions.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A0DA35A0258FD216009F3038 /* GithubWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0DA35B6258FD218009F3038 /* Build configuration list for PBXNativeTarget "GithubWidgetsExtension" */;
+			buildPhases = (
+				A0DA359D258FD216009F3038 /* Sources */,
+				A0DA359E258FD216009F3038 /* Frameworks */,
+				A0DA359F258FD216009F3038 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = GithubContributions;
+			name = GithubWidgetsExtension;
 			packageProductDependencies = (
-				A0CA6896258E57E8009847DF /* SwiftSoup */,
+				A0510339258FE6DC00E2CC60 /* Apollo */,
 			);
-			productName = GithubContributions;
-			productReference = A0CA687D258E570B009847DF /* GithubContributions.app */;
-			productType = "com.apple.product-type.application";
+			productName = GithubWidgetsExtension;
+			productReference = A0DA35A1258FD216009F3038 /* GithubWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -132,6 +288,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					A0CA687C258E570B009847DF = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					A0DA35A0258FD216009F3038 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -147,12 +306,14 @@
 			mainGroup = A0CA6874258E570B009847DF;
 			packageReferences = (
 				A0CA6895258E57E8009847DF /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				A0CA68A2258E8C41009847DF /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = A0CA687E258E570B009847DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A0CA687C258E570B009847DF /* GithubContributions */,
+				A0DA35A0258FD216009F3038 /* GithubWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -163,11 +324,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0CA6888258E570E009847DF /* Preview Assets.xcassets in Resources */,
+				A0CA68A7258E8D92009847DF /* schema.json in Resources */,
+				A0CA68AD258E8EE6009847DF /* Queries.graphql in Resources */,
 				A0CA6885258E570E009847DF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0DA359F258FD216009F3038 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0DA35AC258FD218009F3038 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0CA68AA258E8E5E009847DF /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0CA6879258E570B009847DF /* Sources */ = {
@@ -175,15 +367,45 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0CA689C258E5835009847DF /* GitHub.swift in Sources */,
+				A0DA35AF258FD218009F3038 /* GithubWidgets.intentdefinition in Sources */,
+				A0CA68C0258EB01B009847DF /* SquareView.swift in Sources */,
 				A0CA688D258E570E009847DF /* GithubContributions.xcdatamodeld in Sources */,
+				A0CA68B4258E904B009847DF /* Network.swift in Sources */,
 				A0CA688A258E570E009847DF /* Persistence.swift in Sources */,
 				A0CA6883258E570B009847DF /* ContentView.swift in Sources */,
 				A0CA6881258E570B009847DF /* GithubContributionsApp.swift in Sources */,
 				A0CA68A0258E5E2F009847DF /* Contribution.swift in Sources */,
+				A0CA68B7258E94AD009847DF /* UserContributionFetcher.swift in Sources */,
+				A0CA68C5258EB22C009847DF /* ColorExtension.swift in Sources */,
+				A0CA68B1258E8FC7009847DF /* API.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0DA359D258FD216009F3038 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0DA35BD258FD23D009F3038 /* UserContributionFetcher.swift in Sources */,
+				A0DA35A9258FD216009F3038 /* GithubWidgets.swift in Sources */,
+				A0DA35B9258FD233009F3038 /* API.swift in Sources */,
+				A0DA35BA258FD235009F3038 /* Network.swift in Sources */,
+				A051033E258FEAD900E2CC60 /* UserDataFetcher.swift in Sources */,
+				A0DA35AE258FD218009F3038 /* GithubWidgets.intentdefinition in Sources */,
+				A0DA35C3258FD247009F3038 /* ColorExtension.swift in Sources */,
+				A0DA35C0258FD243009F3038 /* Contribution.swift in Sources */,
+				A0DA35C6258FD24B009F3038 /* SquareView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0DA35B1258FD218009F3038 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0DA35A0258FD216009F3038 /* GithubWidgetsExtension */;
+			targetProxy = A0DA35B0258FD218009F3038 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A0CA688F258E570E009847DF /* Debug */ = {
@@ -305,8 +527,10 @@
 		A0CA6892258E570E009847DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GithubContributions/GithubContributions.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubContributions/Preview Content\"";
 				DEVELOPMENT_TEAM = SGJZQ53648;
@@ -327,8 +551,10 @@
 		A0CA6893258E570E009847DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GithubContributions/GithubContributions.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubContributions/Preview Content\"";
 				DEVELOPMENT_TEAM = SGJZQ53648;
@@ -341,6 +567,50 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.kirtanpatel.GithubContributions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A0DA35B4258FD218009F3038 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = GithubWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SGJZQ53648;
+				INFOPLIST_FILE = GithubWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.kirtanpatel.GithubContributions.GithubWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A0DA35B5258FD218009F3038 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = GithubWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SGJZQ53648;
+				INFOPLIST_FILE = GithubWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.kirtanpatel.GithubContributions.GithubWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,6 +637,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		A0DA35B6258FD218009F3038 /* Build configuration list for PBXNativeTarget "GithubWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0DA35B4258FD218009F3038 /* Debug */,
+				A0DA35B5258FD218009F3038 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -378,13 +657,31 @@
 				minimumVersion = 2.3.2;
 			};
 		};
+		A0CA68A2258E8C41009847DF /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.38.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A0510339258FE6DC00E2CC60 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0CA68A2258E8C41009847DF /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
 		A0CA6896258E57E8009847DF /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A0CA6895258E57E8009847DF /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		A0CA68A3258E8C41009847DF /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0CA68A2258E8C41009847DF /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
 		};
 /* End XCSwiftPackageProductDependency section */
 
