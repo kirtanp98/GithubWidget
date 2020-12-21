@@ -14,6 +14,7 @@
 		A051034D25901E3E00E2CC60 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A051034C25901E3E00E2CC60 /* KingfisherSwiftUI */; };
 		A051035125901E4C00E2CC60 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A051035025901E4C00E2CC60 /* Kingfisher */; };
 		A051035325901E5500E2CC60 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A051035225901E5500E2CC60 /* KingfisherSwiftUI */; };
+		A051035E25901FF000E2CC60 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = A051035D25901FF000E2CC60 /* SwiftKeychainWrapper */; };
 		A0CA6881258E570B009847DF /* GithubContributionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6880258E570B009847DF /* GithubContributionsApp.swift */; };
 		A0CA6883258E570B009847DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6882258E570B009847DF /* ContentView.swift */; };
 		A0CA6885258E570E009847DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA6884258E570E009847DF /* Assets.xcassets */; };
@@ -104,6 +105,7 @@
 			files = (
 				A051034B25901E3E00E2CC60 /* Kingfisher in Frameworks */,
 				A0510343258FF6A400E2CC60 /* BetterSafariView in Frameworks */,
+				A051035E25901FF000E2CC60 /* SwiftKeychainWrapper in Frameworks */,
 				A0CA68A4258E8C41009847DF /* Apollo in Frameworks */,
 				A051034D25901E3E00E2CC60 /* KingfisherSwiftUI in Frameworks */,
 			);
@@ -268,6 +270,7 @@
 				A0510342258FF6A400E2CC60 /* BetterSafariView */,
 				A051034A25901E3E00E2CC60 /* Kingfisher */,
 				A051034C25901E3E00E2CC60 /* KingfisherSwiftUI */,
+				A051035D25901FF000E2CC60 /* SwiftKeychainWrapper */,
 			);
 			productName = GithubContributions;
 			productReference = A0CA687D258E570B009847DF /* GithubContributions.app */;
@@ -325,6 +328,7 @@
 				A0CA68A2258E8C41009847DF /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				A0510341258FF6A300E2CC60 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 				A051034925901E3D00E2CC60 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A051035C25901FF000E2CC60 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = A0CA687E258E570B009847DF /* Products */;
 			projectDirPath = "";
@@ -682,6 +686,14 @@
 				minimumVersion = 5.15.8;
 			};
 		};
+		A051035C25901FF000E2CC60 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 		A0CA68A2258E8C41009847DF /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -722,6 +734,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A051034925901E3D00E2CC60 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = KingfisherSwiftUI;
+		};
+		A051035D25901FF000E2CC60 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A051035C25901FF000E2CC60 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
 		};
 		A0CA68A3258E8C41009847DF /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;

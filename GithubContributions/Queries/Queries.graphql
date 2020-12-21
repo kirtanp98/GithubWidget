@@ -17,3 +17,11 @@ query getUserContributions($login: String!) {
         }
     }
 }
+
+query getCurrentUser{
+  viewer {
+    url
+    name
+    avatarUrl
+  }
+}
