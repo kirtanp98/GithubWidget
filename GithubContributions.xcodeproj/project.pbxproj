@@ -9,14 +9,17 @@
 /* Begin PBXBuildFile section */
 		A051033A258FE6DC00E2CC60 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = A0510339258FE6DC00E2CC60 /* Apollo */; };
 		A051033E258FEAD900E2CC60 /* UserDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */; };
+		A0510343258FF6A400E2CC60 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = A0510342258FF6A400E2CC60 /* BetterSafariView */; };
+		A051034B25901E3E00E2CC60 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A051034A25901E3E00E2CC60 /* Kingfisher */; };
+		A051034D25901E3E00E2CC60 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A051034C25901E3E00E2CC60 /* KingfisherSwiftUI */; };
+		A051035125901E4C00E2CC60 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A051035025901E4C00E2CC60 /* Kingfisher */; };
+		A051035325901E5500E2CC60 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A051035225901E5500E2CC60 /* KingfisherSwiftUI */; };
 		A0CA6881258E570B009847DF /* GithubContributionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6880258E570B009847DF /* GithubContributionsApp.swift */; };
 		A0CA6883258E570B009847DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6882258E570B009847DF /* ContentView.swift */; };
 		A0CA6885258E570E009847DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA6884258E570E009847DF /* Assets.xcassets */; };
 		A0CA6888258E570E009847DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA6887258E570E009847DF /* Preview Assets.xcassets */; };
 		A0CA688A258E570E009847DF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6889258E570E009847DF /* Persistence.swift */; };
 		A0CA688D258E570E009847DF /* GithubContributions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0CA688B258E570E009847DF /* GithubContributions.xcdatamodeld */; };
-		A0CA6897258E57E8009847DF /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A0CA6896258E57E8009847DF /* SwiftSoup */; };
-		A0CA689C258E5835009847DF /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA689B258E5835009847DF /* GitHub.swift */; };
 		A0CA68A0258E5E2F009847DF /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA689F258E5E2F009847DF /* Contribution.swift */; };
 		A0CA68A4258E8C41009847DF /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = A0CA68A3258E8C41009847DF /* Apollo */; };
 		A0CA68A7258E8D92009847DF /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = A0CA68A6258E8D92009847DF /* schema.json */; };
@@ -77,7 +80,6 @@
 		A0CA6889258E570E009847DF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A0CA688C258E570E009847DF /* GithubContributions.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GithubContributions.xcdatamodel; sourceTree = "<group>"; };
 		A0CA688E258E570E009847DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0CA689B258E5835009847DF /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		A0CA689F258E5E2F009847DF /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
 		A0CA68A6258E8D92009847DF /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		A0CA68AC258E8EE6009847DF /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
@@ -100,8 +102,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0CA6897258E57E8009847DF /* SwiftSoup in Frameworks */,
+				A051034B25901E3E00E2CC60 /* Kingfisher in Frameworks */,
+				A0510343258FF6A400E2CC60 /* BetterSafariView in Frameworks */,
 				A0CA68A4258E8C41009847DF /* Apollo in Frameworks */,
+				A051034D25901E3E00E2CC60 /* KingfisherSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,15 +113,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A051035125901E4C00E2CC60 /* Kingfisher in Frameworks */,
 				A0DA35A6258FD216009F3038 /* SwiftUI.framework in Frameworks */,
 				A051033A258FE6DC00E2CC60 /* Apollo in Frameworks */,
 				A0DA35A4258FD216009F3038 /* WidgetKit.framework in Frameworks */,
+				A051035325901E5500E2CC60 /* KingfisherSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0510346258FF6C400E2CC60 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		A0CA6874258E570B009847DF = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +192,6 @@
 		A0CA689A258E5814009847DF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A0CA689B258E5835009847DF /* GitHub.swift */,
 				A0CA68B6258E94AD009847DF /* UserContributionFetcher.swift */,
 			);
 			path = ViewModel;
@@ -222,6 +234,7 @@
 		A0DA35A7258FD216009F3038 /* GithubWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				A0510346258FF6C400E2CC60 /* Widgets */,
 				A0DA35A8258FD216009F3038 /* GithubWidgets.swift */,
 				A0DA35AA258FD216009F3038 /* GithubWidgets.intentdefinition */,
 				A0DA35AB258FD218009F3038 /* Assets.xcassets */,
@@ -251,8 +264,10 @@
 			);
 			name = GithubContributions;
 			packageProductDependencies = (
-				A0CA6896258E57E8009847DF /* SwiftSoup */,
 				A0CA68A3258E8C41009847DF /* Apollo */,
+				A0510342258FF6A400E2CC60 /* BetterSafariView */,
+				A051034A25901E3E00E2CC60 /* Kingfisher */,
+				A051034C25901E3E00E2CC60 /* KingfisherSwiftUI */,
 			);
 			productName = GithubContributions;
 			productReference = A0CA687D258E570B009847DF /* GithubContributions.app */;
@@ -273,6 +288,8 @@
 			name = GithubWidgetsExtension;
 			packageProductDependencies = (
 				A0510339258FE6DC00E2CC60 /* Apollo */,
+				A051035025901E4C00E2CC60 /* Kingfisher */,
+				A051035225901E5500E2CC60 /* KingfisherSwiftUI */,
 			);
 			productName = GithubWidgetsExtension;
 			productReference = A0DA35A1258FD216009F3038 /* GithubWidgetsExtension.appex */;
@@ -305,8 +322,9 @@
 			);
 			mainGroup = A0CA6874258E570B009847DF;
 			packageReferences = (
-				A0CA6895258E57E8009847DF /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				A0CA68A2258E8C41009847DF /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				A0510341258FF6A300E2CC60 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
+				A051034925901E3D00E2CC60 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A0CA687E258E570B009847DF /* Products */;
 			projectDirPath = "";
@@ -366,7 +384,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0CA689C258E5835009847DF /* GitHub.swift in Sources */,
 				A0DA35AF258FD218009F3038 /* GithubWidgets.intentdefinition in Sources */,
 				A0CA68C0258EB01B009847DF /* SquareView.swift in Sources */,
 				A0CA688D258E570E009847DF /* GithubContributions.xcdatamodeld in Sources */,
@@ -649,12 +666,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A0CA6895258E57E8009847DF /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+		A0510341258FF6A300E2CC60 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			repositoryURL = "https://github.com/stleamist/BetterSafariView";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.2.2;
+			};
+		};
+		A051034925901E3D00E2CC60 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.2;
+				minimumVersion = 5.15.8;
 			};
 		};
 		A0CA68A2258E8C41009847DF /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
@@ -673,10 +698,30 @@
 			package = A0CA68A2258E8C41009847DF /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
 		};
-		A0CA6896258E57E8009847DF /* SwiftSoup */ = {
+		A0510342258FF6A400E2CC60 /* BetterSafariView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A0CA6895258E57E8009847DF /* XCRemoteSwiftPackageReference "SwiftSoup" */;
-			productName = SwiftSoup;
+			package = A0510341258FF6A300E2CC60 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
+		};
+		A051034A25901E3E00E2CC60 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A051034925901E3D00E2CC60 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		A051034C25901E3E00E2CC60 /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A051034925901E3D00E2CC60 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+		A051035025901E4C00E2CC60 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A051034925901E3D00E2CC60 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		A051035225901E5500E2CC60 /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A051034925901E3D00E2CC60 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
 		};
 		A0CA68A3258E8C41009847DF /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;

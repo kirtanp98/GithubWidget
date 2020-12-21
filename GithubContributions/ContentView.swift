@@ -11,8 +11,60 @@ import CoreData
 struct ContentView: View {
     
     var body: some View {
-        VStack {
-            Text("Widget")
+        NavigationView {
+            List {
+                Section {
+                    Label("Authenticate with GitHub", systemImage: "person.fill")
+                }
+                
+                Section(header: Text("Stylize")) {
+                    Label {
+                        Text("Color Palette")
+                     } icon: {
+                        Image(systemName: "sparkles")
+                            .renderingMode(.original)
+                    }
+                    
+                    Label {
+                        Text("Background")
+                     } icon: {
+                        Image(systemName: "sparkles")
+                            .renderingMode(.original)
+                    }
+                }
+                
+                Section(header: Text("Tip")) {
+                    Label {
+                        Text("Money")
+                     } icon: {
+                        Image(systemName: "gift.fill")
+                            .renderingMode(.original)
+                    }
+                    Label {
+                        Text("Money")
+                     } icon: {
+                        Image(systemName: "gift.fill")
+                            .renderingMode(.original)
+                    }
+                    Label {
+                        Text("Money")
+                     } icon: {
+                        Image(systemName: "gift.fill")
+                            .renderingMode(.original)
+                    }
+                }
+                
+                Section(header: Text("Contact")) {
+                    Label {
+                        Text("Twitter")
+                     } icon: {
+                        Text("🐦")
+                    }
+                }
+                
+            }
+            .listStyle(InsetGroupedListStyle())
+            .navigationTitle("Contributions")
         }
     }
     

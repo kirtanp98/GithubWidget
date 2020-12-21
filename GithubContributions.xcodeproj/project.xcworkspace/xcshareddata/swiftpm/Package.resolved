@@ -11,12 +11,30 @@
         }
       },
       {
+        "package": "BetterSafariView",
+        "repositoryURL": "https://github.com/stleamist/BetterSafariView",
+        "state": {
+          "branch": null,
+          "revision": "a4a8590a24f088ddb077815f49b62c71342c5869",
+          "version": "2.2.2"
+        }
+      },
+      {
         "package": "InflectorKit",
         "repositoryURL": "https://github.com/apollographql/InflectorKit",
         "state": {
           "branch": null,
           "revision": "b1d0099abe36facd198113633f502889842906af",
           "version": "0.0.2"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "2a10bf41da75599a9f8e872dbd44fe0155a2e00c",
+          "version": "5.15.8"
         }
       },
       {
@@ -71,15 +89,6 @@
           "branch": null,
           "revision": "37760e9a52030bb9011972c5213c3350fa9d41fd",
           "version": "1.0.0"
-        }
-      },
-      {
-        "package": "SwiftSoup",
-        "repositoryURL": "https://github.com/scinfu/SwiftSoup",
-        "state": {
-          "branch": null,
-          "revision": "774dc9c7213085db8aa59595e27c1cd22e428904",
-          "version": "2.3.2"
         }
       }
     ]
