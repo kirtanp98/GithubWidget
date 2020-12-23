@@ -35,8 +35,17 @@ class TokenAddingInterceptor: ApolloInterceptor {
         response: HTTPResponse<Operation>?,
         completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
         
+                
+        let key = UserDefaults(suiteName: "group.contributions.data")?.value(forKey: "authkey")
+        guard let authToken = key else {
+            chain.proceedAsync(request: request,
+                               response: response,
+                               completion: completion)
+            return
+        }
+
         // TODO
-        request.addHeader(name: "Authorization", value: "Bearer 6a97bc013ef748f86c16b61ee6e6b93fa3a135e4")
+        request.addHeader(name: "Authorization", value: "Bearer \(authToken)")
         chain.proceedAsync(request: request,
                            response: response,
                            completion: completion)

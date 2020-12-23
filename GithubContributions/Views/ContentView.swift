@@ -8,19 +8,48 @@
 import SwiftUI
 import CoreData
 import BetterSafariView
+import KingfisherSwiftUI
 
 struct ContentView: View {
     
+    @EnvironmentObject var authManager: AuthManager
     @State var showAuthLogin = false
     
     var body: some View {
         NavigationView {
             List {
                 Section {
-                    Button(action: {
-                        showAuthLogin.toggle()
-                    }){
-                        Label("Authenticate with GitHub", systemImage: "person.fill")
+                    
+                    if !authManager.loginedIn {
+                        Button(action: {
+                            withAnimation(.easeIn) {
+                                showAuthLogin.toggle()
+                            }
+                        }){
+                            Label("Authenticate with GitHub", systemImage: "person.fill")
+                        }
+                    } else {
+                        HStack {
+                            if let url = URL(string: authManager.imageURL) {
+                                KFImage(url)
+                                    .resizable()
+                                    .clipShape(Circle())
+                                    .frame(width: 40, height: 40)
+                                    .animation(.easeInOut)
+                            }
+                            Text("Hi, \(authManager.userName)")
+                                .bold()
+                                .animation(.easeInOut)
+
+                            Spacer()
+                            Button(action: {
+                                withAnimation(.easeOut) {
+                                    authManager.logOut()
+                                }
+                            }) {
+                                Text("Logout")
+                            }
+                        }
                     }
                 }
                 
@@ -77,9 +106,6 @@ struct ContentView: View {
                     url: URL(string: "https://github.com/login/oauth/authorize?client_id=4254465c6344b733f4a6&allow_signup=true")!,
                     callbackURLScheme: "widgets://"
                 ) { callbackURL, error in
-//                    authManager.setCurrentAuthKey(callbackURL!.absoluteString)
-//                    userManager.loadData()
-                    print(callbackURL)
                     makePostRequet(callbackURL!.absoluteString)
                 }
                 .prefersEphemeralWebBrowserSession(false)
@@ -103,6 +129,13 @@ struct ContentView: View {
                 }
                 if let data = data, let dataString = String(data: data, encoding: .utf8) {
                     print("Response data string:\n \(dataString)")
+                    let sep = dataString.components(separatedBy: "=")
+                    let accessToken = sep[1].split(separator: "&")[0]
+                    print(accessToken)
+                    
+                    DispatchQueue.main.async {
+                        authManager.updateStatus(authKey: String(accessToken))
+                    }
                 }
         }
         task.resume()
