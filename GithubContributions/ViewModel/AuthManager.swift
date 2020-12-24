@@ -6,14 +6,16 @@
 //
 
 import Foundation
+import Apollo
 
 class AuthManager: ObservableObject {
     @Published var loginedIn: Bool
     @Published var userName: String
     @Published var imageURL: String
-    
+    @Published var offline: Bool
     
     init() {
+        offline = false
         let key = UserDefaults(suiteName: "group.contributions.data")!.string(forKey: "authkey") ?? ""
         if !key.isEmpty {
             loginedIn = true
@@ -50,8 +52,22 @@ class AuthManager: ObservableObject {
                     print(self.imageURL)
                 }
             case .failure(let error):
+//                let poo = error as Error
                 print("Failure! Error: \(error)")
-                self.logOut()
+                print(error.localizedDescription)
+//                if let errorResponse = error as? ResponseCodeInterceptor.ResponseCodeError {
+//                    print(errorResponse.failureReason)
+//                    print(errorResponse.errorDescription)
+//                    print(errorResponse)
+//                    print(errorResponse.localizedDescription)
+//                }
+                if error.localizedDescription.contains("401") {
+                    self.logOut()
+                }
+                
+                if error.localizedDescription.contains("offline") {
+                    self.offline = true
+                }
             }
         }
     }

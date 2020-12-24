@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A016820D25916BC3008925B6 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A016820C25916BC3008925B6 /* AuthManager.swift */; };
 		A016827425917798008925B6 /* UserDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */; };
+		A0385C7E2593A55E00FA0369 /* ColorPaletteSwabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385C7D2593A55E00FA0369 /* ColorPaletteSwabView.swift */; };
 		A051033A258FE6DC00E2CC60 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = A0510339258FE6DC00E2CC60 /* Apollo */; };
 		A0510343258FF6A400E2CC60 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = A0510342258FF6A400E2CC60 /* BetterSafariView */; };
 		A051034B25901E3E00E2CC60 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A051034A25901E3E00E2CC60 /* Kingfisher */; };
@@ -22,7 +23,6 @@
 		A0CA6885258E570E009847DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA6884258E570E009847DF /* Assets.xcassets */; };
 		A0CA6888258E570E009847DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA6887258E570E009847DF /* Preview Assets.xcassets */; };
 		A0CA688A258E570E009847DF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6889258E570E009847DF /* Persistence.swift */; };
-		A0CA688D258E570E009847DF /* GithubContributions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0CA688B258E570E009847DF /* GithubContributions.xcdatamodeld */; };
 		A0CA68A0258E5E2F009847DF /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA689F258E5E2F009847DF /* Contribution.swift */; };
 		A0CA68A4258E8C41009847DF /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = A0CA68A3258E8C41009847DF /* Apollo */; };
 		A0CA68A7258E8D92009847DF /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = A0CA68A6258E8D92009847DF /* schema.json */; };
@@ -43,6 +43,18 @@
 		A0DA35C0258FD243009F3038 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA689F258E5E2F009847DF /* Contribution.swift */; };
 		A0DA35C3258FD247009F3038 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68C4258EB22C009847DF /* ColorExtension.swift */; };
 		A0DA35C6258FD24B009F3038 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA68BF258EB01B009847DF /* SquareView.swift */; };
+		A0DD0EE72593A80C00428149 /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EE62593A80C00428149 /* PaletteView.swift */; };
+		A0DD0EEA2593AA6400428149 /* BackgroundListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EE92593AA6400428149 /* BackgroundListView.swift */; };
+		A0DD0EEF2593BEEA00428149 /* GithubContributions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EED2593BEEA00428149 /* GithubContributions.xcdatamodeld */; };
+		A0DD0EF02593BEEA00428149 /* GithubContributions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EED2593BEEA00428149 /* GithubContributions.xcdatamodeld */; };
+		A0DD0EF62593C0D300428149 /* CColor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF22593C0D300428149 /* CColor+CoreDataClass.swift */; };
+		A0DD0EF72593C0D300428149 /* CColor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF22593C0D300428149 /* CColor+CoreDataClass.swift */; };
+		A0DD0EF82593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF32593C0D300428149 /* CColor+CoreDataProperties.swift */; };
+		A0DD0EF92593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF32593C0D300428149 /* CColor+CoreDataProperties.swift */; };
+		A0DD0EFA2593C0D300428149 /* Palette+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF42593C0D300428149 /* Palette+CoreDataClass.swift */; };
+		A0DD0EFB2593C0D300428149 /* Palette+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF42593C0D300428149 /* Palette+CoreDataClass.swift */; };
+		A0DD0EFC2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF52593C0D300428149 /* Palette+CoreDataProperties.swift */; };
+		A0DD0EFD2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF52593C0D300428149 /* Palette+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		A016820C25916BC3008925B6 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		A0385C7D2593A55E00FA0369 /* ColorPaletteSwabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteSwabView.swift; sourceTree = "<group>"; };
 		A051032E258FE60700E2CC60 /* GithubContributions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubContributions.entitlements; sourceTree = "<group>"; };
 		A0510331258FE61100E2CC60 /* GithubWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataFetcher.swift; sourceTree = "<group>"; };
@@ -91,7 +104,6 @@
 		A0CA6884258E570E009847DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CA6887258E570E009847DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0CA6889258E570E009847DF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		A0CA688C258E570E009847DF /* GithubContributions.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GithubContributions.xcdatamodel; sourceTree = "<group>"; };
 		A0CA688E258E570E009847DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0CA689F258E5E2F009847DF /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
 		A0CA68A6258E8D92009847DF /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
@@ -107,6 +119,13 @@
 		A0DA35AA258FD216009F3038 /* GithubWidgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = GithubWidgets.intentdefinition; sourceTree = "<group>"; };
 		A0DA35AB258FD218009F3038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0DA35AD258FD218009F3038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0DD0EE62593A80C00428149 /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
+		A0DD0EE92593AA6400428149 /* BackgroundListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundListView.swift; sourceTree = "<group>"; };
+		A0DD0EEE2593BEEA00428149 /* GithubContributions.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GithubContributions.xcdatamodel; sourceTree = "<group>"; };
+		A0DD0EF22593C0D300428149 /* CColor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CColor+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		A0DD0EF32593C0D300428149 /* CColor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CColor+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		A0DD0EF42593C0D300428149 /* Palette+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Palette+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		A0DD0EF52593C0D300428149 /* Palette+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Palette+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +185,10 @@
 		A0CA687F258E570B009847DF /* GithubContributions */ = {
 			isa = PBXGroup;
 			children = (
+				A0DD0EF22593C0D300428149 /* CColor+CoreDataClass.swift */,
+				A0DD0EF32593C0D300428149 /* CColor+CoreDataProperties.swift */,
+				A0DD0EF42593C0D300428149 /* Palette+CoreDataClass.swift */,
+				A0DD0EF52593C0D300428149 /* Palette+CoreDataProperties.swift */,
 				A0CA68BE258EB00A009847DF /* Views */,
 				A0CA68BA258EAFE0009847DF /* GraphQL */,
 				A0CA68AB258E8EB6009847DF /* Queries */,
@@ -173,10 +196,10 @@
 				A0CA6899258E5810009847DF /* Model */,
 				A0CA6880258E570B009847DF /* GithubContributionsApp.swift */,
 				A0CA68C4258EB22C009847DF /* ColorExtension.swift */,
+				A0DD0EED2593BEEA00428149 /* GithubContributions.xcdatamodeld */,
 				A0CA6884258E570E009847DF /* Assets.xcassets */,
 				A0CA68A6258E8D92009847DF /* schema.json */,
 				A0CA688E258E570E009847DF /* Info.plist */,
-				A0CA688B258E570E009847DF /* GithubContributions.xcdatamodeld */,
 				A051032E258FE60700E2CC60 /* GithubContributions.entitlements */,
 				A0CA6886258E570E009847DF /* Preview Content */,
 			);
@@ -231,6 +254,9 @@
 			children = (
 				A0CA6882258E570B009847DF /* ContentView.swift */,
 				A0CA68BF258EB01B009847DF /* SquareView.swift */,
+				A0385C7D2593A55E00FA0369 /* ColorPaletteSwabView.swift */,
+				A0DD0EE62593A80C00428149 /* PaletteView.swift */,
+				A0DD0EE92593AA6400428149 /* BackgroundListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -400,16 +426,23 @@
 			files = (
 				A0DA35AF258FD218009F3038 /* GithubWidgets.intentdefinition in Sources */,
 				A016820D25916BC3008925B6 /* AuthManager.swift in Sources */,
+				A0DD0EEF2593BEEA00428149 /* GithubContributions.xcdatamodeld in Sources */,
 				A0CA68C0258EB01B009847DF /* SquareView.swift in Sources */,
-				A0CA688D258E570E009847DF /* GithubContributions.xcdatamodeld in Sources */,
 				A0CA68B4258E904B009847DF /* Network.swift in Sources */,
 				A0CA688A258E570E009847DF /* Persistence.swift in Sources */,
+				A0385C7E2593A55E00FA0369 /* ColorPaletteSwabView.swift in Sources */,
+				A0DD0EEA2593AA6400428149 /* BackgroundListView.swift in Sources */,
 				A0CA6883258E570B009847DF /* ContentView.swift in Sources */,
+				A0DD0EFA2593C0D300428149 /* Palette+CoreDataClass.swift in Sources */,
 				A0CA6881258E570B009847DF /* GithubContributionsApp.swift in Sources */,
+				A0DD0EFC2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */,
 				A0CA68A0258E5E2F009847DF /* Contribution.swift in Sources */,
+				A0DD0EF62593C0D300428149 /* CColor+CoreDataClass.swift in Sources */,
 				A0CA68B7258E94AD009847DF /* UserContributionFetcher.swift in Sources */,
 				A05DF8CB25917C9400C1A0F3 /* API.swift in Sources */,
+				A0DD0EE72593A80C00428149 /* PaletteView.swift in Sources */,
 				A0CA68C5258EB22C009847DF /* ColorExtension.swift in Sources */,
+				A0DD0EF82593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,14 +451,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0DA35BD258FD23D009F3038 /* UserContributionFetcher.swift in Sources */,
+				A0DD0EFB2593C0D300428149 /* Palette+CoreDataClass.swift in Sources */,
 				A0DA35A9258FD216009F3038 /* GithubWidgets.swift in Sources */,
+				A0DD0EF02593BEEA00428149 /* GithubContributions.xcdatamodeld in Sources */,
 				A016827425917798008925B6 /* UserDataFetcher.swift in Sources */,
 				A0DA35BA258FD235009F3038 /* Network.swift in Sources */,
+				A0DD0EFD2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */,
 				A0DA35AE258FD218009F3038 /* GithubWidgets.intentdefinition in Sources */,
 				A0DA35C3258FD247009F3038 /* ColorExtension.swift in Sources */,
+				A0DD0EF92593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */,
 				A0DA35C0258FD243009F3038 /* Contribution.swift in Sources */,
 				A05DF8CC25917C9400C1A0F3 /* API.swift in Sources */,
 				A0DA35C6258FD24B009F3038 /* SquareView.swift in Sources */,
+				A0DD0EF72593C0D300428149 /* CColor+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,12 +784,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		A0CA688B258E570E009847DF /* GithubContributions.xcdatamodeld */ = {
+		A0DD0EED2593BEEA00428149 /* GithubContributions.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A0CA688C258E570E009847DF /* GithubContributions.xcdatamodel */,
+				A0DD0EEE2593BEEA00428149 /* GithubContributions.xcdatamodel */,
 			);
-			currentVersion = A0CA688C258E570E009847DF /* GithubContributions.xcdatamodel */;
+			currentVersion = A0DD0EEE2593BEEA00428149 /* GithubContributions.xcdatamodel */;
 			path = GithubContributions.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

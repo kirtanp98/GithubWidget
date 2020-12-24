@@ -24,4 +24,11 @@ extension Color {
          Color(red: 0, green: 200/255, blue: 0),
          Color(red: 0, green: 1, blue: 0),
         ]
+    
+    func toData() -> Data? {
+        let uiColor = UIColor(self)
+        
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: uiColor, requiringSecureCoding: false)
+        return data
+    }
 }

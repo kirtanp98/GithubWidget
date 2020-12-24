@@ -15,12 +15,23 @@ struct ContentView: View {
     @EnvironmentObject var authManager: AuthManager
     @State var showAuthLogin = false
     
+    @Environment(\.managedObjectContext) var moc
+    
     var body: some View {
         NavigationView {
             List {
                 Section {
-                    
-                    if !authManager.loginedIn {
+                    if authManager.offline {
+                        VStack(alignment: .center) {
+                            Text("Offline")
+                                .bold()
+                                .foregroundColor(.red)
+                            Text("Please be connected to the internet and restart the app")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    else if !authManager.loginedIn {
                         Button(action: {
                             withAnimation(.easeIn) {
                                 showAuthLogin.toggle()
@@ -28,7 +39,8 @@ struct ContentView: View {
                         }){
                             Label("Authenticate with GitHub", systemImage: "person.fill")
                         }
-                    } else {
+                    }
+                    else {
                         HStack {
                             if let url = URL(string: authManager.imageURL) {
                                 KFImage(url)
@@ -54,18 +66,22 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Stylize")) {
-                    Label {
-                        Text("Color Palette")
-                     } icon: {
-                        Image(systemName: "sparkles")
-                            .renderingMode(.original)
+                    NavigationLink(destination: ColorPaletteSwabView()) {
+                        Label {
+                            Text("Color Palette")
+                         } icon: {
+                            Image(systemName: "sparkles")
+                                .renderingMode(.original)
+                        }
                     }
                     
-                    Label {
-                        Text("Background")
-                     } icon: {
-                        Image(systemName: "sparkles")
-                            .renderingMode(.original)
+                    NavigationLink(destination: BackgroundListView()) {
+                        Label {
+                            Text("Background")
+                         } icon: {
+                            Image(systemName: "sparkles")
+                                .renderingMode(.original)
+                        }
                     }
                 }
                 
@@ -91,10 +107,12 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Contact")) {
-                    Label {
-                        Text("Twitter")
-                     } icon: {
-                        Text("🐦")
+                    Link(destination: URL(string: "https://twitter.com/Kirtanisnothere")!) {
+                        Label {
+                            Text("Twitter")
+                         } icon: {
+                            Text("🐦")
+                        }
                     }
                 }
                 
@@ -106,7 +124,9 @@ struct ContentView: View {
                     url: URL(string: "https://github.com/login/oauth/authorize?client_id=4254465c6344b733f4a6&allow_signup=true")!,
                     callbackURLScheme: "widgets://"
                 ) { callbackURL, error in
-                    makePostRequet(callbackURL!.absoluteString)
+                    if let urlString = callbackURL {
+                        makePostRequet(urlString.absoluteString)
+                    }
                 }
                 .prefersEphemeralWebBrowserSession(false)
             }

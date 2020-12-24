@@ -9,14 +9,14 @@ import SwiftUI
 
 @main
 struct GithubContributionsApp: App {
-    //let persistenceController = PersistenceController.shared
+    let persistenceController = PersistenceController.shared
     @StateObject var authState = AuthManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(authState)
-                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
