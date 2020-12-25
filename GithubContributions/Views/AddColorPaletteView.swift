@@ -68,6 +68,9 @@ struct AddColorPaletteView: View {
                             VStack {
                                 ColorPicker("Pick Color", selection: $lightColors[index])
                                     .labelsHidden()
+                                    .scaleEffect(CGSize(width: 2, height: 2))
+                                    .frame(width: 50, height: 50)
+
                                 Text("Level \(index)")
                                     .foregroundColor(.gray)
                                     .font(.caption2)
@@ -86,13 +89,15 @@ struct AddColorPaletteView: View {
                                 VStack{
                                     ColorPicker("Pick Color", selection: $darkColors[index])
                                         .labelsHidden()
+                                        .scaleEffect(CGSize(width: 2, height: 2))
+                                        .frame(width: 50, height: 50)
                                     Text("Level \(index)")
                                         .foregroundColor(.gray)
                                         .font(.caption2)
                                 }
                             }
                             Spacer()
-                        }.transition(.move(edge: .top))
+                        }//.transition(.move(edge: .top))
                     }
                 }
                 .padding(.vertical)
