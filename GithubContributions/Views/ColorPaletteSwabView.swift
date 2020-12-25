@@ -10,6 +10,8 @@ import SwiftUI
 struct ColorPaletteSwabView: View {
     
     @Environment(\.managedObjectContext) var moc
+    @EnvironmentObject var modalController: ModalController
+    
     @FetchRequest(entity: Palette.entity(), sortDescriptors: []) var palettes: FetchedResults<Palette>
     
     var body: some View {
@@ -18,23 +20,27 @@ struct ColorPaletteSwabView: View {
                 PaletteView(palette: pal)
             }.onDelete(perform: delete)
             
-        }.navigationTitle("Palette Swab")
+        }.navigationTitle("Color Palettes")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
-                    let new = Palette(context: moc)
-                    new.date = Date()
-                    new.id = UUID()
-                    new.name = "Test"
-                    print("add")
-                    
-                    if self.moc.hasChanges{
-                        do{
-                            try self.moc.save()
-                        }catch{
-                            print("Error Saving")
-                        }
+                    withAnimation {
+                        modalController.toggleModal()
                     }
+                    
+//                    let new = Palette(context: moc)
+//                    new.date = Date()
+//                    new.id = UUID()
+//                    new.name = "Test"
+//                    print("add")
+//
+//                    if self.moc.hasChanges{
+//                        do{
+//                            try self.moc.save()
+//                        }catch{
+//                            print("Error Saving")
+//                        }
+//                    }
                 } label: {
                     Image(systemName: "plus")
                 }

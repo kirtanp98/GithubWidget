@@ -43,21 +43,6 @@ struct PaletteRowView: View {
                 }.buttonStyle(PlainButtonStyle())
             }
             
-//
-//            ForEach(0..<5) { number in
-//                Spacer()
-//                Button(action: {
-//                    print(number)
-//                }) {
-//                    VStack {
-//                        SplitCircle(colorOne: .pink, colorTwo: .yellow)
-//                        Text("Level \(number)")
-//                            .foregroundColor(.gray)
-//                            .font(.caption2)
-//                    }
-//
-//                }.buttonStyle(PlainButtonStyle())
-//            }
             Spacer()
         }
     }

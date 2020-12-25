@@ -18,6 +18,10 @@
 		A051035325901E5500E2CC60 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A051035225901E5500E2CC60 /* KingfisherSwiftUI */; };
 		A05DF8CB25917C9400C1A0F3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DF8CA25917C9400C1A0F3 /* API.swift */; };
 		A05DF8CC25917C9400C1A0F3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DF8CA25917C9400C1A0F3 /* API.swift */; };
+		A0C247FE2594EF3D001F9C51 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C247FD2594EF3D001F9C51 /* VisualEffectView.swift */; };
+		A0C248062594F004001F9C51 /* AddColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C248052594F004001F9C51 /* AddColorPaletteView.swift */; };
+		A0C248092594F029001F9C51 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C248082594F029001F9C51 /* BaseView.swift */; };
+		A0C2480C2594F08F001F9C51 /* ModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C2480B2594F08F001F9C51 /* ModalController.swift */; };
 		A0CA6881258E570B009847DF /* GithubContributionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6880258E570B009847DF /* GithubContributionsApp.swift */; };
 		A0CA6883258E570B009847DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6882258E570B009847DF /* ContentView.swift */; };
 		A0CA6885258E570E009847DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA6884258E570E009847DF /* Assets.xcassets */; };
@@ -98,6 +102,10 @@
 		A0510331258FE61100E2CC60 /* GithubWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataFetcher.swift; sourceTree = "<group>"; };
 		A05DF8CA25917C9400C1A0F3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = GithubContributions/API.swift; sourceTree = SOURCE_ROOT; };
+		A0C247FD2594EF3D001F9C51 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		A0C248052594F004001F9C51 /* AddColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddColorPaletteView.swift; sourceTree = "<group>"; };
+		A0C248082594F029001F9C51 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		A0C2480B2594F08F001F9C51 /* ModalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalController.swift; sourceTree = "<group>"; };
 		A0CA687D258E570B009847DF /* GithubContributions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubContributions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CA6880258E570B009847DF /* GithubContributionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubContributionsApp.swift; sourceTree = "<group>"; };
 		A0CA6882258E570B009847DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,6 +168,14 @@
 			children = (
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		A0C248002594EF72001F9C51 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A0C247FD2594EF3D001F9C51 /* VisualEffectView.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		A0CA6874258E570B009847DF = {
@@ -228,6 +244,7 @@
 				A0CA6889258E570E009847DF /* Persistence.swift */,
 				A0CA68B6258E94AD009847DF /* UserContributionFetcher.swift */,
 				A016820C25916BC3008925B6 /* AuthManager.swift */,
+				A0C2480B2594F08F001F9C51 /* ModalController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -252,11 +269,14 @@
 		A0CA68BE258EB00A009847DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A0C248002594EF72001F9C51 /* Util */,
 				A0CA6882258E570B009847DF /* ContentView.swift */,
 				A0CA68BF258EB01B009847DF /* SquareView.swift */,
 				A0385C7D2593A55E00FA0369 /* ColorPaletteSwabView.swift */,
 				A0DD0EE62593A80C00428149 /* PaletteView.swift */,
 				A0DD0EE92593AA6400428149 /* BackgroundListView.swift */,
+				A0C248052594F004001F9C51 /* AddColorPaletteView.swift */,
+				A0C248082594F029001F9C51 /* BaseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -429,8 +449,11 @@
 				A0DD0EEF2593BEEA00428149 /* GithubContributions.xcdatamodeld in Sources */,
 				A0CA68C0258EB01B009847DF /* SquareView.swift in Sources */,
 				A0CA68B4258E904B009847DF /* Network.swift in Sources */,
+				A0C247FE2594EF3D001F9C51 /* VisualEffectView.swift in Sources */,
 				A0CA688A258E570E009847DF /* Persistence.swift in Sources */,
+				A0C248062594F004001F9C51 /* AddColorPaletteView.swift in Sources */,
 				A0385C7E2593A55E00FA0369 /* ColorPaletteSwabView.swift in Sources */,
+				A0C248092594F029001F9C51 /* BaseView.swift in Sources */,
 				A0DD0EEA2593AA6400428149 /* BackgroundListView.swift in Sources */,
 				A0CA6883258E570B009847DF /* ContentView.swift in Sources */,
 				A0DD0EFA2593C0D300428149 /* Palette+CoreDataClass.swift in Sources */,
@@ -443,6 +466,7 @@
 				A0DD0EE72593A80C00428149 /* PaletteView.swift in Sources */,
 				A0CA68C5258EB22C009847DF /* ColorExtension.swift in Sources */,
 				A0DD0EF82593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */,
+				A0C2480C2594F08F001F9C51 /* ModalController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

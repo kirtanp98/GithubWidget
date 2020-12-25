@@ -109,9 +109,13 @@ struct ContentView: View {
                 Section(header: Text("Contact")) {
                     Link(destination: URL(string: "https://twitter.com/Kirtanisnothere")!) {
                         Label {
-                            Text("Twitter")
+                            Text("@Kirtanisnothere")
+                                .bold()
                          } icon: {
-                            Text("🐦")
+//                            Text("🐦")
+                            Image("twitter")
+                                .resizable()
+                                .scaledToFit()
                         }
                     }
                 }
