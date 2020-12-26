@@ -10,11 +10,12 @@ import SwiftUI
 struct AddColorPaletteView: View {
     
     @EnvironmentObject var modalController: ModalController
+    @Environment(\.managedObjectContext) var moc
+
 
     @State var customizeDarkMode = false
     @State var level0Light = Color.green
     @State var name = ""
-//    @State var colors: [Color] = [.white,.white,.white,.white,.white,.white,.white,.white,.white,.white,]
     @State var lightColors: [Color] = Color.githubGreen
     @State var darkColors: [Color] = Color.githubGreen
     
@@ -105,7 +106,41 @@ struct AddColorPaletteView: View {
                 Button {
                     print("hi")
                     withAnimation {
-                        modalController.dismissModal()
+                        
+                        if name.isEmpty {
+                            return
+                        }
+                        
+                        let newPalette = Palette(context: moc)
+                        newPalette.id = UUID()
+                        newPalette.date = Date()
+                        newPalette.name = name
+                        
+                        for index in (0..<5) {
+                            let colorP = CColor(context: moc)
+                            colorP.id = UUID()
+                            colorP.level = Int16(index)
+                            colorP.origin = newPalette
+                            
+                            if customizeDarkMode {
+                                colorP.light = lightColors[index].toData()
+                                colorP.dark = darkColors[index].toData()
+                            } else {
+                                colorP.light = lightColors[index].toData()
+                                colorP.dark = lightColors[index].toData()
+
+                            }
+                            
+                        }
+
+                        if self.moc.hasChanges{
+                            do{
+                                try self.moc.save()
+                                modalController.dismissModal()
+                            }catch{
+                                print("Error Saving")
+                            }
+                        }
                     }
                 } label: {
                     Text("Add")
