@@ -27,20 +27,6 @@ struct ColorPaletteSwabView: View {
                     withAnimation {
                         modalController.toggleModal()
                     }
-                    
-//                    let new = Palette(context: moc)
-//                    new.date = Date()
-//                    new.id = UUID()
-//                    new.name = "Test"
-//                    print("add")
-//
-//                    if self.moc.hasChanges{
-//                        do{
-//                            try self.moc.save()
-//                        }catch{
-//                            print("Error Saving")
-//                        }
-//                    }
                 } label: {
                     Image(systemName: "plus")
                 }

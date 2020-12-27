@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20C5048k" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C5048k" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Background" representedClassName="Background" syncable="YES">
+        <attribute name="darkBackground" optional="YES" attributeType="Binary"/>
+        <attribute name="darkColor" optional="YES" attributeType="Binary"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isImage" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lightBackground" optional="YES" attributeType="Binary"/>
+        <attribute name="lightColor" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="CColor" representedClassName="CColor" syncable="YES">
         <attribute name="dark" optional="YES" attributeType="Binary"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -14,7 +24,8 @@
         <relationship name="colors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CColor" inverseName="origin" inverseEntity="CColor"/>
     </entity>
     <elements>
-        <element name="Palette" positionX="-63" positionY="-9" width="128" height="103"/>
+        <element name="Background" positionX="-63" positionY="54" width="128" height="149"/>
         <element name="CColor" positionX="-54" positionY="18" width="128" height="104"/>
+        <element name="Palette" positionX="-63" positionY="-9" width="128" height="103"/>
     </elements>
 </model>
