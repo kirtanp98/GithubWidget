@@ -19,6 +19,7 @@
 		A051035325901E5500E2CC60 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A051035225901E5500E2CC60 /* KingfisherSwiftUI */; };
 		A05DF8CB25917C9400C1A0F3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DF8CA25917C9400C1A0F3 /* API.swift */; };
 		A05DF8CC25917C9400C1A0F3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DF8CA25917C9400C1A0F3 /* API.swift */; };
+		A06A78F1259A4640004431F2 /* NewAddColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */; };
 		A0A91AFA2597CAAE0039E1A0 /* AddBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */; };
 		A0A91AFE2597CB680039E1A0 /* Background+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */; };
 		A0A91AFF2597CB680039E1A0 /* Background+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */; };
@@ -107,6 +108,7 @@
 		A0510331258FE61100E2CC60 /* GithubWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataFetcher.swift; sourceTree = "<group>"; };
 		A05DF8CA25917C9400C1A0F3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = GithubContributions/API.swift; sourceTree = SOURCE_ROOT; };
+		A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddColorPaletteView.swift; sourceTree = "<group>"; };
 		A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBackgroundView.swift; sourceTree = "<group>"; };
 		A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				A0C248052594F004001F9C51 /* AddColorPaletteView.swift */,
 				A0C248082594F029001F9C51 /* BaseView.swift */,
 				A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */,
+				A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				A0C248062594F004001F9C51 /* AddColorPaletteView.swift in Sources */,
 				A0385C7E2593A55E00FA0369 /* ColorPaletteSwabView.swift in Sources */,
 				A0C248092594F029001F9C51 /* BaseView.swift in Sources */,
+				A06A78F1259A4640004431F2 /* NewAddColorPaletteView.swift in Sources */,
 				A0DD0EEA2593AA6400428149 /* BackgroundListView.swift in Sources */,
 				A0CA6883258E570B009847DF /* ContentView.swift in Sources */,
 				A0DD0EFA2593C0D300428149 /* Palette+CoreDataClass.swift in Sources */,

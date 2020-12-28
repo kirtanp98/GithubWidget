@@ -34,7 +34,7 @@ struct PaletteRowView: View {
                     print(pal.wrappedLevel)
                 }) {
                     VStack {
-                        SplitCircle(colorOne: pal.wrappedLightColor, colorTwo: pal.wrappedDarkColor)
+                        SplitCircle(colorOne: pal.wrappedLightColor, colorTwo: pal.wrappedDarkColor, size: 50)
                         Text("Level \(pal.wrappedLevel)")
                             .foregroundColor(.gray)
                             .font(.caption2)
@@ -52,14 +52,16 @@ struct SplitCircle: View {
     var colorOne: Color
     var colorTwo: Color
     
+    var size: CGFloat
+    
     var body: some View {
         HStack(alignment: .center, spacing: 0){
             Rectangle()
                 .foregroundColor(colorOne)
-                .frame(width: 25, height: 50)
+                .frame(width: size/2, height: size)
             Rectangle()
                 .foregroundColor(colorTwo)
-                .frame(width: 25, height: 50)
+                .frame(width: size/2, height: size)
         }.clipShape(Circle())
     }
 }

@@ -64,8 +64,6 @@ struct AddColorPaletteView: View {
                     HStack {
                         ForEach(0..<5) { index in
                             Spacer()
-//                            Circle()
-//                                .frame(width: 50, height: 50)
                             VStack {
                                 ColorPicker("Pick Color", selection: $lightColors[index])
                                     .labelsHidden()

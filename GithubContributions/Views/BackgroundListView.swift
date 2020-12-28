@@ -10,7 +10,7 @@ import SwiftUI
 struct BackgroundListView: View {
     
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Background.entity(), sortDescriptors: []) var backgrounds: FetchedResults<Background>
+    @FetchRequest(entity: Background.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Background.date, ascending: false)]) var backgrounds: FetchedResults<Background>
     
     @State var showModal = false
     
@@ -18,10 +18,11 @@ struct BackgroundListView: View {
         List {
             ForEach(backgrounds, id: \.wrappedID) { background in
                 BackgroundItem(background: background)
-            }
+            }.onDelete(perform: delete)
         }.navigationTitle("Backgrounds")
         .sheet(isPresented: $showModal, content: {
             AddBackgroundView()
+                .environment(\.managedObjectContext, moc)
         })
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -31,6 +32,21 @@ struct BackgroundListView: View {
                     Image(systemName: "plus")
                 }
 
+            }
+        }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let elementToDelete = backgrounds[index]
+            self.moc.delete(elementToDelete)
+        }
+        
+        if self.moc.hasChanges{
+            do{
+                try self.moc.save()
+            }catch{
+                print("Error Saving")
             }
         }
     }
@@ -49,14 +65,25 @@ struct BackgroundItem: View {
                 ZStack {
                     
                     if background.isImage {
-                        RoundedRectangle(cornerRadius: 10)
-                            .background(Image(uiImage: background.wrappedLightBackground!))
+                        Image(uiImage: background.wrappedLightBackground!)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300)
+                            .aspectRatio(contentMode: .fill)
                             .frame(width: 300, height: 120)
+                            .cornerRadius(10)
+                            .clipped()
                         
-                        RoundedRectangle(cornerRadius: 10)
-                            .background(Image(uiImage: background.wrappedDarkBackground!))
+                        Image(uiImage: background.wrappedDarkBackground!)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300)
+                            .aspectRatio(contentMode: .fill)
                             .frame(width: 300, height: 120)
+                            .cornerRadius(10)
+                            .clipped()
                             .clipShape(Triangle())
+
                         
                     } else {
                         RoundedRectangle(cornerRadius: 10)
@@ -69,6 +96,7 @@ struct BackgroundItem: View {
                             .clipShape(Triangle())
                     }
                 }
+                    .shadow(radius: 2)
                 Spacer()
             }
         }

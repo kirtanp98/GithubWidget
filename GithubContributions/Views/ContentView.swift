@@ -62,6 +62,7 @@ struct ContentView: View {
                                 Text("Logout")
                             }
                         }
+
                     }
                 }
                 
@@ -87,22 +88,25 @@ struct ContentView: View {
                 
                 Section(header: Text("Tip")) {
                     Label {
-                        Text("Money")
+                        Text("$0.99 Tip")
                      } icon: {
                         Image(systemName: "gift.fill")
                             .renderingMode(.original)
                     }
                     Label {
-                        Text("Money")
+                        Text("$2.99 Tip")
                      } icon: {
                         Image(systemName: "gift.fill")
                             .renderingMode(.original)
                     }
                     Label {
-                        Text("Money")
+                        Text("$5.99 Tip")
                      } icon: {
                         Image(systemName: "gift.fill")
                             .renderingMode(.original)
+                    }
+                    Button("Restore Purchases") {
+                        print("restoring")
                     }
                 }
                 
@@ -112,7 +116,6 @@ struct ContentView: View {
                             Text("@Kirtanisnothere")
                                 .bold()
                          } icon: {
-//                            Text("🐦")
                             Image("twitter")
                                 .resizable()
                                 .scaledToFit()

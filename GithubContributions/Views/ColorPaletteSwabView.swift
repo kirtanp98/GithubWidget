@@ -10,9 +10,10 @@ import SwiftUI
 struct ColorPaletteSwabView: View {
     
     @Environment(\.managedObjectContext) var moc
-    @EnvironmentObject var modalController: ModalController
     
-    @FetchRequest(entity: Palette.entity(), sortDescriptors: []) var palettes: FetchedResults<Palette>
+    @FetchRequest(entity: Palette.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Palette.date, ascending: false)]) var palettes: FetchedResults<Palette>
+    
+    @State var showModal = false
     
     var body: some View {
         List {            
@@ -20,12 +21,17 @@ struct ColorPaletteSwabView: View {
                 PaletteView(palette: pal)
             }.onDelete(perform: delete)
             
-        }.navigationTitle("Color Palettes")
+        }
+        .navigationTitle("Color Palettes")
+        .sheet(isPresented: $showModal, content: {
+            NewAddColorPaletteView()
+                .environment(\.managedObjectContext, moc)
+        })
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
                     withAnimation {
-                        modalController.toggleModal()
+                        showModal.toggle()
                     }
                 } label: {
                     Image(systemName: "plus")
