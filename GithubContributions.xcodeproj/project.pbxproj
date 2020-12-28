@@ -24,9 +24,7 @@
 		A0A91AFE2597CB680039E1A0 /* Background+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */; };
 		A0A91AFF2597CB680039E1A0 /* Background+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */; };
 		A0C247FE2594EF3D001F9C51 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C247FD2594EF3D001F9C51 /* VisualEffectView.swift */; };
-		A0C248062594F004001F9C51 /* AddColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C248052594F004001F9C51 /* AddColorPaletteView.swift */; };
 		A0C248092594F029001F9C51 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C248082594F029001F9C51 /* BaseView.swift */; };
-		A0C2480C2594F08F001F9C51 /* ModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C2480B2594F08F001F9C51 /* ModalController.swift */; };
 		A0CA6881258E570B009847DF /* GithubContributionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6880258E570B009847DF /* GithubContributionsApp.swift */; };
 		A0CA6883258E570B009847DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6882258E570B009847DF /* ContentView.swift */; };
 		A0CA6885258E570E009847DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA6884258E570E009847DF /* Assets.xcassets */; };
@@ -113,9 +111,7 @@
 		A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A0C247FD2594EF3D001F9C51 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
-		A0C248052594F004001F9C51 /* AddColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddColorPaletteView.swift; sourceTree = "<group>"; };
 		A0C248082594F029001F9C51 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		A0C2480B2594F08F001F9C51 /* ModalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalController.swift; sourceTree = "<group>"; };
 		A0CA687D258E570B009847DF /* GithubContributions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubContributions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CA6880258E570B009847DF /* GithubContributionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubContributionsApp.swift; sourceTree = "<group>"; };
 		A0CA6882258E570B009847DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -257,7 +253,6 @@
 				A0CA6889258E570E009847DF /* Persistence.swift */,
 				A0CA68B6258E94AD009847DF /* UserContributionFetcher.swift */,
 				A016820C25916BC3008925B6 /* AuthManager.swift */,
-				A0C2480B2594F08F001F9C51 /* ModalController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -288,7 +283,6 @@
 				A0385C7D2593A55E00FA0369 /* ColorPaletteSwabView.swift */,
 				A0DD0EE62593A80C00428149 /* PaletteView.swift */,
 				A0DD0EE92593AA6400428149 /* BackgroundListView.swift */,
-				A0C248052594F004001F9C51 /* AddColorPaletteView.swift */,
 				A0C248082594F029001F9C51 /* BaseView.swift */,
 				A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */,
 				A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */,
@@ -467,7 +461,6 @@
 				A0C247FE2594EF3D001F9C51 /* VisualEffectView.swift in Sources */,
 				A0A91AFA2597CAAE0039E1A0 /* AddBackgroundView.swift in Sources */,
 				A0CA688A258E570E009847DF /* Persistence.swift in Sources */,
-				A0C248062594F004001F9C51 /* AddColorPaletteView.swift in Sources */,
 				A0385C7E2593A55E00FA0369 /* ColorPaletteSwabView.swift in Sources */,
 				A0C248092594F029001F9C51 /* BaseView.swift in Sources */,
 				A06A78F1259A4640004431F2 /* NewAddColorPaletteView.swift in Sources */,
@@ -485,7 +478,6 @@
 				A034F5342597E345003999A1 /* ImagePickerView.swift in Sources */,
 				A0CA68C5258EB22C009847DF /* ColorExtension.swift in Sources */,
 				A0DD0EF82593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */,
-				A0C2480C2594F08F001F9C51 /* ModalController.swift in Sources */,
 				A0A91AFF2597CB680039E1A0 /* Background+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
