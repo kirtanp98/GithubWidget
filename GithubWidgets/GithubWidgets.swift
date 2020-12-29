@@ -50,25 +50,9 @@ struct SimpleEntry: TimelineEntry {
 
 struct GithubWidgetsEntryView : View {
     var entry: Provider.Entry
-    
-    let columns = [
-        GridItem(.fixed(10)),
-        GridItem(.fixed(10)),
-        GridItem(.fixed(10)),
-        GridItem(.fixed(10)),
-        GridItem(.fixed(10)),
-        GridItem(.fixed(10)),
-        GridItem(.fixed(10))
-    ]
 
     var body: some View {
-        //Text(entry.date, style: .time)
-        LazyHGrid(rows: columns) {
-            ForEach(entry.contribution.suffix(133), id: \.date) { item in
-                SquareView(contribution: item, colorPalett: Color.testGreen)
-                    .animation(.easeInOut)
-            }
-        }//.overlay(fetcher.loading ? Color.gray.opacity(0.2) : Color.clear)
+        CalendarWidget(contribution: entry.contribution)
     }
 }
 

@@ -20,6 +20,8 @@
 		A05DF8CB25917C9400C1A0F3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DF8CA25917C9400C1A0F3 /* API.swift */; };
 		A05DF8CC25917C9400C1A0F3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DF8CA25917C9400C1A0F3 /* API.swift */; };
 		A06A78F1259A4640004431F2 /* NewAddColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */; };
+		A06E68E4259A63FF001E6E09 /* CalendarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */; };
+		A06E68E5259A63FF001E6E09 /* CalendarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */; };
 		A0A91AFA2597CAAE0039E1A0 /* AddBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */; };
 		A0A91AFE2597CB680039E1A0 /* Background+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */; };
 		A0A91AFF2597CB680039E1A0 /* Background+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */; };
@@ -107,6 +109,7 @@
 		A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataFetcher.swift; sourceTree = "<group>"; };
 		A05DF8CA25917C9400C1A0F3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = GithubContributions/API.swift; sourceTree = SOURCE_ROOT; };
 		A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddColorPaletteView.swift; sourceTree = "<group>"; };
+		A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWidget.swift; sourceTree = "<group>"; };
 		A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBackgroundView.swift; sourceTree = "<group>"; };
 		A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -176,6 +179,14 @@
 			path = Widgets;
 			sourceTree = "<group>";
 		};
+		A06E68E2259A60DB001E6E09 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		A0C248002594EF72001F9C51 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +201,7 @@
 			children = (
 				A0510331258FE61100E2CC60 /* GithubWidgetsExtension.entitlements */,
 				A0CA687F258E570B009847DF /* GithubContributions */,
+				A06E68E2259A60DB001E6E09 /* Shared */,
 				A0DA35A7258FD216009F3038 /* GithubWidgets */,
 				A0DA35A2258FD216009F3038 /* Frameworks */,
 				A0CA687E258E570B009847DF /* Products */,
@@ -458,6 +470,7 @@
 				A0DD0EEF2593BEEA00428149 /* GithubContributions.xcdatamodeld in Sources */,
 				A0CA68C0258EB01B009847DF /* SquareView.swift in Sources */,
 				A0CA68B4258E904B009847DF /* Network.swift in Sources */,
+				A06E68E4259A63FF001E6E09 /* CalendarWidget.swift in Sources */,
 				A0C247FE2594EF3D001F9C51 /* VisualEffectView.swift in Sources */,
 				A0A91AFA2597CAAE0039E1A0 /* AddBackgroundView.swift in Sources */,
 				A0CA688A258E570E009847DF /* Persistence.swift in Sources */,
@@ -494,6 +507,7 @@
 				A0DA35BA258FD235009F3038 /* Network.swift in Sources */,
 				A0DD0EFD2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */,
 				A0DA35AE258FD218009F3038 /* GithubWidgets.intentdefinition in Sources */,
+				A06E68E5259A63FF001E6E09 /* CalendarWidget.swift in Sources */,
 				A0DA35C3258FD247009F3038 /* ColorExtension.swift in Sources */,
 				A0DD0EF92593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */,
 				A0DA35C0258FD243009F3038 /* Contribution.swift in Sources */,

@@ -15,6 +15,8 @@ struct ContentView: View {
     @EnvironmentObject var authManager: AuthManager
     @State var showAuthLogin = false
     
+    @ObservedObject var poo = UserContributionFetcher()
+    
     @Environment(\.managedObjectContext) var moc
     
     var body: some View {
@@ -123,6 +125,20 @@ struct ContentView: View {
                     }
                 }
                 
+                Section {
+                    VStack {
+                        if !poo.loading {
+                            CalendarWidget(contribution: poo.contributions)
+                                .frame(width: 300, height: 100)
+                                .background(Color.red)
+                        }
+                    }.padding()
+
+                }
+                
+            }
+            .onAppear {
+                poo.fetchData(user: "kirtanp98")
             }
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Contributions")
