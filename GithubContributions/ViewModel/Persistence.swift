@@ -32,9 +32,23 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "GithubContributions")
+        let storeURL = URL.storeURL(for: "group.contributions.data", databaseName: "contributions")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+        
+//        let description = NSPersistentStoreDescription(url: storeURL)
+//        
+//        container.persistentStoreDescriptions = [description]
+        var defaultURL: URL?
+        if let storeDescription = container.persistentStoreDescriptions.first, let url = storeDescription.url {
+            defaultURL = FileManager.default.fileExists(atPath: url.path) ? url : nil
+        }
+        
+        if defaultURL == nil {
+            container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeURL)]
+        }
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

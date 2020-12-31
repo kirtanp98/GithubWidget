@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct SquareView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     var contribution: Contribute
     var colorPalett: [Color]
     var size: CGFloat
     
     var body: some View {
         ZStack {
-            colorPalett[contribution.level]
+            
+            colorScheme == .dark ? colorPalett[contribution.level] : colorPalett[contribution.level]
+            
+//            colorPalett[contribution.level]
         }
         .frame(width: size, height: size)
         //.border(Color.white, width: 1)

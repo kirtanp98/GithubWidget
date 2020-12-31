@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+import SwiftUI
 
 extension Palette {
 
@@ -27,6 +27,14 @@ extension Palette {
         return set.sorted {
             $0.wrappedLevel > $1.wrappedLevel
         }
+    }
+    
+    public var lightColorArray: [Color] {
+        return colorArray.map{ $0.wrappedLightColor }
+    }
+    
+    public var darkColorArray: [Color] {
+        return colorArray.map{ $0.wrappedDarkColor }
     }
     
     public var wrappedId: UUID {

@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2FFA6F89-A451-487E-90E8-20811053AF79"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GithubContributions/Views/NewAddColorPaletteView.swift"
@@ -66,6 +66,129 @@
             endingLineNumber = "17"
             landmarkName = "NewAddColorPaletteView"
             landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "2FFA6F89-A451-487E-90E8-20811053AF79 - d5501fc243b6dab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of GithubContributions.NewAddColorPaletteView.name : Swift.String"
+                  moduleName = "GithubContributions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirtanpatel/Developer/iOS/GithubContributions/GithubContributions/Views/NewAddColorPaletteView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "2FFA6F89-A451-487E-90E8-20811053AF79 - cae5b386afc4f00f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GithubContributions.NewAddColorPaletteView.name.getter : Swift.String"
+                  moduleName = "GithubContributions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirtanpatel/Developer/iOS/GithubContributions/GithubContributions/Views/NewAddColorPaletteView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "2FFA6F89-A451-487E-90E8-20811053AF79 - 66acbad635dfe6f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GithubContributions.NewAddColorPaletteView.name.setter : Swift.String"
+                  moduleName = "GithubContributions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirtanpatel/Developer/iOS/GithubContributions/GithubContributions/Views/NewAddColorPaletteView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "2FFA6F89-A451-487E-90E8-20811053AF79 - 10dd043993f34a91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GithubContributions.NewAddColorPaletteView.name.modify : Swift.String"
+                  moduleName = "GithubContributions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirtanpatel/Developer/iOS/GithubContributions/GithubContributions/Views/NewAddColorPaletteView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "2FFA6F89-A451-487E-90E8-20811053AF79 - efc7cacfce0fa531"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GithubContributions.NewAddColorPaletteView.name.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "GithubContributions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirtanpatel/Developer/iOS/GithubContributions/GithubContributions/Views/NewAddColorPaletteView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "2FFA6F89-A451-487E-90E8-20811053AF79 - f3aaf0bb76490c6b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GithubContributions.NewAddColorPaletteView.$name.getter : SwiftUI.Binding&lt;Swift.String&gt;"
+                  moduleName = "GithubContributions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirtanpatel/Developer/iOS/GithubContributions/GithubContributions/Views/NewAddColorPaletteView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "2FFA6F89-A451-487E-90E8-20811053AF79 - 2d033c8c969192cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GithubContributions.NewAddColorPaletteView.init() -&gt; GithubContributions.NewAddColorPaletteView"
+                  moduleName = "GithubContributions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirtanpatel/Developer/iOS/GithubContributions/GithubContributions/Views/NewAddColorPaletteView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "640">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "457DFC99-51BB-4C01-9B75-73DEAB2C2E14"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PaletteIntent/IntentHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "provideColorPaletteOptionsCollection(for:with:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
