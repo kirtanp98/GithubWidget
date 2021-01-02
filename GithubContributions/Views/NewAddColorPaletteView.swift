@@ -92,6 +92,27 @@ struct NewAddColorPaletteView: View {
                 Section {
                     Toggle("Customize Dark Mode", isOn: $customizeDarkMode.animation(.easeInOut))
                         .padding(.horizontal)
+                    Button("Randomize") {
+                        for index in lightColors.indices {
+                            let randomRed = Double.random(in: 0..<1)
+                            let randomBlue = Double.random(in: 0..<1)
+                            let randomGreen = Double.random(in: 0..<1)
+
+                            let newColor = Color(red: randomRed, green: randomGreen, blue: randomBlue)
+                            lightColors[index] = newColor
+                        }
+                        
+                        if customizeDarkMode {
+                            for index in darkColors.indices {
+                                let randomRed = Double.random(in: 0..<1)
+                                let randomBlue = Double.random(in: 0..<1)
+                                let randomGreen = Double.random(in: 0..<1)
+
+                                let newColor = Color(red: randomRed, green: randomGreen, blue: randomBlue)
+                                darkColors[index] = newColor
+                            }
+                        }
+                    }
                 }
                 
                 Section {
@@ -121,9 +142,14 @@ struct NewAddColorPaletteView: View {
                                 }
                             }
                             Spacer()
-                        }.padding(customizeDarkMode ? .bottom : [])
+                        }
                         
-                        if customizeDarkMode {
+                    }
+                }
+                if customizeDarkMode {
+                    
+                    Section {
+                        VStack {
                             Text("Dark Mode")
                                 .foregroundColor(.gray)
                                 .font(.caption2)
@@ -141,10 +167,10 @@ struct NewAddColorPaletteView: View {
                                     }
                                 }
                                 Spacer()
-                            }.transition(.move(edge: .top))
+                            }
                         }
-                    }
-                    .animation(.easeInOut)
+                    }.animation(.easeInOut)
+
                 }
                 
                 Section {

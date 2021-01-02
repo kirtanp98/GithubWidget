@@ -25,7 +25,7 @@ extension Palette {
         let set = colors as? Set<CColor> ?? []
         
         return set.sorted {
-            $0.wrappedLevel > $1.wrappedLevel
+            $0.wrappedLevel < $1.wrappedLevel
         }
     }
     

@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 class DataFetcher {
     var container: NSPersistentContainer
@@ -40,6 +41,24 @@ class DataFetcher {
         return []
     }
     
+    func getColorByID(uuid: String) -> Palette? {
+        let request = NSFetchRequest<Palette>(entityName: "Palette")
+        request.fetchLimit = 1
+        
+        guard let id = UUID(uuidString: uuid) else { return nil }
+        
+        request.predicate = NSPredicate(format: "id == %@", id as NSUUID)
+        
+        do {
+            let color = try container.viewContext.fetch(request)
+            return color[0]
+        } catch {
+            print("Error Fetching ID: \(uuid)")
+        }
+        
+        return nil
+    }
+    
     func getBackgrounds() -> [Background] {
         let request = NSFetchRequest<Background>(entityName: "Background")
         
@@ -52,5 +71,24 @@ class DataFetcher {
         }
         
         return []
+    }
+    
+    func getBackgroundByID(uuid: String) -> Background? {
+        let request = NSFetchRequest<Background>(entityName: "Background")
+        request.fetchLimit = 1
+        
+        guard let id = UUID(uuidString: uuid) else { return nil }
+        
+        request.predicate = NSPredicate(format: "id == %@", id as NSUUID)
+        
+        do {
+            let background = try container.viewContext.fetch(request)
+            return background[0]
+        } catch {
+            print("Error Fetching ID: \(uuid)")
+        }
+        
+        return nil
+
     }
 }

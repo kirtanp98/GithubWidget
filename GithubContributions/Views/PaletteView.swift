@@ -28,7 +28,7 @@ struct PaletteRowView: View {
     var body: some View {
         HStack {
             
-            ForEach(palette.colorArray.reversed(), id: \.wrappedLevel) { pal in
+            ForEach(palette.colorArray, id: \.wrappedLevel) { pal in
                 Spacer()
                 Button(action: {
                     print(pal.wrappedLevel)

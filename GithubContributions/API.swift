@@ -351,6 +351,7 @@ public final class GetCurrentUserQuery: GraphQLQuery {
       viewer {
         __typename
         url
+        login
         name
         avatarUrl
       }
@@ -398,6 +399,7 @@ public final class GetCurrentUserQuery: GraphQLQuery {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("url", type: .nonNull(.scalar(String.self))),
+          GraphQLField("login", type: .nonNull(.scalar(String.self))),
           GraphQLField("name", type: .scalar(String.self)),
           GraphQLField("avatarUrl", type: .nonNull(.scalar(String.self))),
         ]
@@ -409,8 +411,8 @@ public final class GetCurrentUserQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(url: String, name: String? = nil, avatarUrl: String) {
-        self.init(unsafeResultMap: ["__typename": "User", "url": url, "name": name, "avatarUrl": avatarUrl])
+      public init(url: String, login: String, name: String? = nil, avatarUrl: String) {
+        self.init(unsafeResultMap: ["__typename": "User", "url": url, "login": login, "name": name, "avatarUrl": avatarUrl])
       }
 
       public var __typename: String {
@@ -429,6 +431,16 @@ public final class GetCurrentUserQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "url")
+        }
+      }
+
+      /// The username used to login.
+      public var login: String {
+        get {
+          return resultMap["login"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "login")
         }
       }
 

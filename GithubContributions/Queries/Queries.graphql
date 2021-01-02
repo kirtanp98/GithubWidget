@@ -21,6 +21,7 @@ query getUserContributions($login: String!) {
 query getCurrentUser{
   viewer {
     url
+    login
     name
     avatarUrl
   }

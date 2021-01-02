@@ -125,17 +125,6 @@ struct ContentView: View {
                     }
                 }
                 
-                Section {
-                    VStack {
-                        if !poo.loading {
-                            CalendarWidget(contribution: poo.contributions)
-                                .frame(width: 300, height: 100)
-                                .background(Color.red)
-                        }
-                    }.padding()
-
-                }
-                
             }
             .onAppear {
                 poo.fetchData(user: "kirtanp98")

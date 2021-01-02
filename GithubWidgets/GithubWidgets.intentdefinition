@@ -79,53 +79,11 @@
 					<key>INIntentParameterConfigurable</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
-					<string>Rounded Corners</string>
-					<key>INIntentParameterDisplayNameID</key>
-					<string>RmwGyt</string>
-					<key>INIntentParameterDisplayPriority</key>
-					<integer>2</integer>
-					<key>INIntentParameterMetadata</key>
-					<dict>
-						<key>INIntentParameterMetadataFalseDisplayName</key>
-						<string>false</string>
-						<key>INIntentParameterMetadataFalseDisplayNameID</key>
-						<string>rmIaEQ</string>
-						<key>INIntentParameterMetadataTrueDisplayName</key>
-						<string>true</string>
-						<key>INIntentParameterMetadataTrueDisplayNameID</key>
-						<string>hEnzXU</string>
-					</dict>
-					<key>INIntentParameterName</key>
-					<string>roundedCorners</string>
-					<key>INIntentParameterPromptDialogs</key>
-					<array>
-						<dict>
-							<key>INIntentParameterPromptDialogCustom</key>
-							<true/>
-							<key>INIntentParameterPromptDialogType</key>
-							<string>Configuration</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterPromptDialogCustom</key>
-							<true/>
-							<key>INIntentParameterPromptDialogType</key>
-							<string>Primary</string>
-						</dict>
-					</array>
-					<key>INIntentParameterTag</key>
-					<integer>3</integer>
-					<key>INIntentParameterType</key>
-					<string>Boolean</string>
-				</dict>
-				<dict>
-					<key>INIntentParameterConfigurable</key>
-					<true/>
-					<key>INIntentParameterDisplayName</key>
 					<string>Color Palette</string>
 					<key>INIntentParameterDisplayNameID</key>
 					<string>wyZbI0</string>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>3</integer>
+					<integer>2</integer>
 					<key>INIntentParameterName</key>
 					<string>colorPalette</string>
 					<key>INIntentParameterObjectType</key>
@@ -162,7 +120,7 @@
 					<key>INIntentParameterDisplayNameID</key>
 					<string>dDCdCa</string>
 					<key>INIntentParameterDisplayPriority</key>
-					<integer>4</integer>
+					<integer>3</integer>
 					<key>INIntentParameterName</key>
 					<string>background</string>
 					<key>INIntentParameterObjectType</key>
@@ -182,26 +140,6 @@
 							<true/>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>Primary</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterPromptDialogCustom</key>
-							<true/>
-							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>There are ${count} options matching ‘${background}’.</string>
-							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>openyE</string>
-							<key>INIntentParameterPromptDialogType</key>
-							<string>DisambiguationIntroduction</string>
-						</dict>
-						<dict>
-							<key>INIntentParameterPromptDialogCustom</key>
-							<true/>
-							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>Just to confirm, you wanted ‘${background}’?</string>
-							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>fuH3PS</string>
-							<key>INIntentParameterPromptDialogType</key>
-							<string>Confirmation</string>
 						</dict>
 					</array>
 					<key>INIntentParameterSupportsDynamicEnumeration</key>
