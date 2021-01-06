@@ -43,7 +43,6 @@ class UserContributionFetcher: ObservableObject {
                     self.contributions = (graphQLResult.data?.user?.contributionsCollection.contributionCalendar.weeks
                         .flatMap{ $0.contributionDays }
                                             .compactMap{ Contribute(date: self.dateFormatter.date(from: $0.date)!, level: Contribute.colorToLevel($0.color), count: $0.contributionCount) })!
-//                    print(self.contributions.last)
                     let mod = self.contributions.count % 7
                     var addToArray = 0
                     if mod > 0 {

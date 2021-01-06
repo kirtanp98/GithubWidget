@@ -129,7 +129,7 @@ struct ContentView: View {
 //                    Text("\(wid.calendar.weeks.count)")
                     if !userFetcher.loading {
                         ClassicGridWidget(light: Color.githubGreen, dark: Color.githubGreen, contribution: userFetcher.contributions)
-                        .frame(width: 164, height: 155)//329x155
+                        .frame(width: 164, height: 155)//329x155 164
                     }
                 }
                 

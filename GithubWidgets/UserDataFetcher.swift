@@ -39,6 +39,19 @@ class UserDataFetcher {
                     self.contributions = (graphQLResult.data?.user?.contributionsCollection.contributionCalendar.weeks
                         .flatMap{ $0.contributionDays }
                                             .compactMap{ Contribute(date: self.dateFormatter.date(from: $0.date)!, level: Contribute.colorToLevel($0.color), count: $0.contributionCount) })!
+                
+                    let mod = self.contributions.count % 7
+                    var addToArray = 0
+                    if mod > 0 {
+                        addToArray = 7 - mod
+                    }
+                    
+                    for x in 0..<addToArray {
+                        let time = Date().addingTimeInterval(TimeInterval(x))
+                        var element = Contribute(date: time, level: 0, count: 0)
+                        element.empty = true
+                        self.contributions.append(element)
+                    }
                     
                     completionHanlder(self.contributions)
                 //}
