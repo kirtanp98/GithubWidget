@@ -21,6 +21,8 @@ struct AddBackgroundView: View {
     @State var lightMode: Color = .white
     @State var darkMode: Color = .black
     
+    @State var customizeDarkMode = false
+    
     @State var lightModeImage: UIImage? = nil
     @State var darkModeImage: UIImage? = nil
     @State var whichImage = false
@@ -29,8 +31,7 @@ struct AddBackgroundView: View {
     var body: some View {
         NavigationView {
             Form {
-                
-                Section {
+                Section(header: Text("Preview")) {
                     VStack(alignment: .center){
                         TabView {
                             Text("hi")
@@ -51,7 +52,7 @@ struct AddBackgroundView: View {
                         ForEach(0 ..< palettes.count) { index in
                             HStack {
                                 HStack {
-                                    ForEach(palettes[index].colorArray.reversed(), id: \.wrappedLevel) { pal in
+                                    ForEach(palettes[index].colorArray, id: \.wrappedLevel) { pal in
                                         SplitCircle(colorOne: pal.wrappedLightColor, colorTwo: pal.wrappedDarkColor, size: 10)
                                     }
                                 }
@@ -66,14 +67,19 @@ struct AddBackgroundView: View {
                     TextField("Name", text: $name)
                 }
                 
-                Section {
+                Section(header: Text("Settings")) {
                     Toggle("Image Background", isOn: $isImage.animation())
+                        .padding(.horizontal)
+                    Toggle("Customize Dark Mode", isOn: $customizeDarkMode.animation())
+                        .padding(.horizontal)
                 }
-                
-                Section {
+
+                Section(header: Text("Customization")) {
                     if !isImage {
-                        ColorPicker("Light mode color", selection: $lightMode)
-                        ColorPicker("Dark mode color", selection: $darkMode)
+                        ColorPicker(customizeDarkMode ? "Light mode color" : "Background Color", selection: $lightMode)
+                        if customizeDarkMode {
+                            ColorPicker("Dark mode color", selection: $darkMode)
+                        }
                     } else {
                         HStack {
                             if let light = lightModeImage {
@@ -86,19 +92,17 @@ struct AddBackgroundView: View {
                                 whichImage = false
                                 showPicker.toggle()
                             } label: {
-                                Text("Pick light mode image")
+                                Text(customizeDarkMode ? "Pick light mode image" : "Pick background image")
                             }
 
                         }
-                        
-                        HStack {
-                            
+                        if customizeDarkMode {
+                            HStack {
                             if let dark = darkModeImage {
                                 Image(uiImage: dark)
                                     .resizable()
                                     .frame(width: 20, height: 20)
                             }
-                            
                             
                             Button {
                                 whichImage = true
@@ -106,6 +110,7 @@ struct AddBackgroundView: View {
                             } label: {
                                 Text("Pick dark mode image")
                             }
+                        }
                         }
                     }
                 }
@@ -122,18 +127,28 @@ struct AddBackgroundView: View {
                         newBackground.date = Date()
                         newBackground.name = name
                         newBackground.isImage = isImage
-                        newBackground.lightColor = lightMode.toData()
-                        newBackground.darkColor = darkMode.toData()
+                        
+                        if customizeDarkMode {
+                            newBackground.lightColor = lightMode.toData()
+                            newBackground.darkColor = darkMode.toData()
+                        } else {
+                            newBackground.lightColor = lightMode.toData()
+                            newBackground.darkColor = lightMode.toData()
+                        }
                         
                         if isImage {
                             if let lImage = lightModeImage, let dImage = darkModeImage {
-                                newBackground.lightBackground = lImage.jpegData(compressionQuality: 0.5)
-                                newBackground.darkBackground = dImage.jpegData(compressionQuality: 0.5)
+                                if customizeDarkMode {
+                                    newBackground.lightBackground = lImage.jpegData(compressionQuality: 0.5)
+                                    newBackground.darkBackground = dImage.jpegData(compressionQuality: 0.5)
+                                } else {
+                                    newBackground.lightBackground = lImage.jpegData(compressionQuality: 0.5)
+                                    newBackground.darkBackground = lImage.jpegData(compressionQuality: 0.5)
+                                }
                             } else {
                                 return
                             }
                         }
-                        
                         
                         if self.moc.hasChanges{
                             do{

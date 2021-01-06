@@ -51,6 +51,9 @@ class DataFetcher {
         
         do {
             let color = try container.viewContext.fetch(request)
+            if color.isEmpty {
+                return nil
+            }
             return color[0]
         } catch {
             print("Error Fetching ID: \(uuid)")

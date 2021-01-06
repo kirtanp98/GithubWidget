@@ -20,6 +20,7 @@ public final class GetUserContributionsQuery: GraphQLQuery {
             isHalloween
             weeks {
               __typename
+              firstDay
               contributionDays {
                 __typename
                 color
@@ -231,6 +232,7 @@ public final class GetUserContributionsQuery: GraphQLQuery {
             public static var selections: [GraphQLSelection] {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("firstDay", type: .nonNull(.scalar(String.self))),
                 GraphQLField("contributionDays", type: .nonNull(.list(.nonNull(.object(ContributionDay.selections))))),
               ]
             }
@@ -241,8 +243,8 @@ public final class GetUserContributionsQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(contributionDays: [ContributionDay]) {
-              self.init(unsafeResultMap: ["__typename": "ContributionCalendarWeek", "contributionDays": contributionDays.map { (value: ContributionDay) -> ResultMap in value.resultMap }])
+            public init(firstDay: String, contributionDays: [ContributionDay]) {
+              self.init(unsafeResultMap: ["__typename": "ContributionCalendarWeek", "firstDay": firstDay, "contributionDays": contributionDays.map { (value: ContributionDay) -> ResultMap in value.resultMap }])
             }
 
             public var __typename: String {
@@ -251,6 +253,16 @@ public final class GetUserContributionsQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// The date of the earliest square in this week.
+            public var firstDay: String {
+              get {
+                return resultMap["firstDay"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "firstDay")
               }
             }
 

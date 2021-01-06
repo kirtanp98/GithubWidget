@@ -6,12 +6,13 @@ query getUserContributions($login: String!) {
                   totalContributions
                   isHalloween
                   weeks {
-                  contributionDays {
-                    color
-                    contributionCount
-                    date
-                    weekday
-                  }
+                      firstDay
+                      contributionDays {
+                        color
+                        contributionCount
+                        date
+                        weekday
+                      }
                 }
             }
         }

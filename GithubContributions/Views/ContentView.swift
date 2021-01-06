@@ -15,7 +15,7 @@ struct ContentView: View {
     @EnvironmentObject var authManager: AuthManager
     @State var showAuthLogin = false
     
-    @ObservedObject var poo = UserContributionFetcher()
+    @ObservedObject var userFetcher = UserContributionFetcher()
     
     @Environment(\.managedObjectContext) var moc
     
@@ -125,9 +125,17 @@ struct ContentView: View {
                     }
                 }
                 
+                Section {
+//                    Text("\(wid.calendar.weeks.count)")
+                    if !userFetcher.loading {
+                        ClassicGridWidget(light: Color.githubGreen, dark: Color.githubGreen, contribution: userFetcher.contributions)
+                        .frame(width: 164, height: 155)//329x155
+                    }
+                }
+                
             }
             .onAppear {
-                poo.fetchData(user: "kirtanp98")
+                userFetcher.fetchData(user: "kirtanp98")
             }
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Contributions")

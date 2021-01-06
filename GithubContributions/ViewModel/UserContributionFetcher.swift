@@ -44,6 +44,18 @@ class UserContributionFetcher: ObservableObject {
                         .flatMap{ $0.contributionDays }
                                             .compactMap{ Contribute(date: self.dateFormatter.date(from: $0.date)!, level: Contribute.colorToLevel($0.color), count: $0.contributionCount) })!
 //                    print(self.contributions.last)
+                    let mod = self.contributions.count % 7
+                    var addToArray = 0
+                    if mod > 0 {
+                        addToArray = 7 - mod
+                    }
+                    
+                    for x in 0..<addToArray {
+                        var element = Contribute(date: Date(), level: 0, count: 0)
+                        element.empty = true
+                        self.contributions.append(element)
+                    }
+                    
                     self.loading = false
                 }
             case .failure(let error):

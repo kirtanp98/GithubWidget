@@ -40,14 +40,43 @@ struct Provider: IntentTimelineProvider {
             widgetBackground = wBackground
         }
         
-        let poo = UserDataFetcher();
-        
-        poo.fetchData(user: "kirtanp98") { contributions in
-                        
-            let entry = SimpleEntry(date: currentDate, configuration: configuration, contribution: contributions, background: widgetBackground, light: lightColor, dark: darkColor)
-            entries.append(entry)
-            let timeline = Timeline(entries: entries, policy: .atEnd)
-            completion(timeline)
+        if let userName = configuration.user {
+            print(userName)
+            if userName.isEmpty {
+                let currentUser = UserInfoFetcher()
+                currentUser.getCurrentUserInfo() { state in
+                    let fetchUser = UserDataFetcher();
+                    
+                    fetchUser.fetchData(user: currentUser.userName) { contributions in
+                        let entry = SimpleEntry(date: currentDate, configuration: configuration, contribution: contributions, background: widgetBackground, light: lightColor, dark: darkColor)
+                        entries.append(entry)
+                        let timeline = Timeline(entries: entries, policy: .atEnd)
+                        completion(timeline)
+                    }
+                }
+            } else {
+                let fetchUser = UserDataFetcher();
+                
+                fetchUser.fetchData(user: userName) { contributions in
+                    let entry = SimpleEntry(date: currentDate, configuration: configuration, contribution: contributions, background: widgetBackground, light: lightColor, dark: darkColor)
+                    entries.append(entry)
+                    let timeline = Timeline(entries: entries, policy: .atEnd)
+                    completion(timeline)
+                }
+            }
+            
+        } else {
+            let currentUser = UserInfoFetcher()
+            currentUser.getCurrentUserInfo() { state in
+                let fetchUser = UserDataFetcher();
+                
+                fetchUser.fetchData(user: currentUser.userName) { contributions in
+                    let entry = SimpleEntry(date: currentDate, configuration: configuration, contribution: contributions, background: widgetBackground, light: lightColor, dark: darkColor)
+                    entries.append(entry)
+                    let timeline = Timeline(entries: entries, policy: .atEnd)
+                    completion(timeline)
+                }
+            }
         }
 
     }

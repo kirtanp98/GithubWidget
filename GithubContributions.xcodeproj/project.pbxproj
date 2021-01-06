@@ -46,6 +46,8 @@
 		A0A91AFF2597CB680039E1A0 /* Background+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */; };
 		A0C247FE2594EF3D001F9C51 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C247FD2594EF3D001F9C51 /* VisualEffectView.swift */; };
 		A0C248092594F029001F9C51 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C248082594F029001F9C51 /* BaseView.swift */; };
+		A0C25EA525A533A60070EDF1 /* ClassicGridWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C25EA425A533A60070EDF1 /* ClassicGridWidget.swift */; };
+		A0C25EA625A533A60070EDF1 /* ClassicGridWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C25EA425A533A60070EDF1 /* ClassicGridWidget.swift */; };
 		A0CA6881258E570B009847DF /* GithubContributionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6880258E570B009847DF /* GithubContributionsApp.swift */; };
 		A0CA6883258E570B009847DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6882258E570B009847DF /* ContentView.swift */; };
 		A0CA6885258E570E009847DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA6884258E570E009847DF /* Assets.xcassets */; };
@@ -83,6 +85,7 @@
 		A0DD0EFB2593C0D300428149 /* Palette+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF42593C0D300428149 /* Palette+CoreDataClass.swift */; };
 		A0DD0EFC2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF52593C0D300428149 /* Palette+CoreDataProperties.swift */; };
 		A0DD0EFD2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF52593C0D300428149 /* Palette+CoreDataProperties.swift */; };
+		A0F921D525A0ED1700BA66F5 /* UserInfoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F921D425A0ED1700BA66F5 /* UserInfoFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +152,7 @@
 		A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A0C247FD2594EF3D001F9C51 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		A0C248082594F029001F9C51 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		A0C25EA425A533A60070EDF1 /* ClassicGridWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicGridWidget.swift; sourceTree = "<group>"; };
 		A0CA687D258E570B009847DF /* GithubContributions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubContributions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CA6880258E570B009847DF /* GithubContributionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubContributionsApp.swift; sourceTree = "<group>"; };
 		A0CA6882258E570B009847DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		A0DD0EF32593C0D300428149 /* CColor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CColor+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		A0DD0EF42593C0D300428149 /* Palette+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Palette+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		A0DD0EF52593C0D300428149 /* Palette+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Palette+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		A0F921D425A0ED1700BA66F5 /* UserInfoFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +241,7 @@
 			children = (
 				A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */,
 				A0374D58259E5862003D6D42 /* URLExtension.swift */,
+				A0C25EA425A533A60070EDF1 /* ClassicGridWidget.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 				A0DA35AD258FD218009F3038 /* Info.plist */,
 				A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */,
 				A0374D40259E4F01003D6D42 /* CoreDataFetcher.swift */,
+				A0F921D425A0ED1700BA66F5 /* UserInfoFetcher.swift */,
 			);
 			path = GithubWidgets;
 			sourceTree = "<group>";
@@ -589,6 +596,7 @@
 				A0DD0EFC2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */,
 				A0CA68A0258E5E2F009847DF /* Contribution.swift in Sources */,
 				A0A91AFE2597CB680039E1A0 /* Background+CoreDataClass.swift in Sources */,
+				A0C25EA525A533A60070EDF1 /* ClassicGridWidget.swift in Sources */,
 				A0DD0EF62593C0D300428149 /* CColor+CoreDataClass.swift in Sources */,
 				A0CA68B7258E94AD009847DF /* UserContributionFetcher.swift in Sources */,
 				A05DF8CB25917C9400C1A0F3 /* API.swift in Sources */,
@@ -618,10 +626,12 @@
 				A0374D41259E4F01003D6D42 /* CoreDataFetcher.swift in Sources */,
 				A06E68E5259A63FF001E6E09 /* CalendarWidget.swift in Sources */,
 				A0DA35C3258FD247009F3038 /* ColorExtension.swift in Sources */,
+				A0F921D525A0ED1700BA66F5 /* UserInfoFetcher.swift in Sources */,
 				A0DD0EF92593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */,
 				A0DA35C0258FD243009F3038 /* Contribution.swift in Sources */,
 				A05DF8CC25917C9400C1A0F3 /* API.swift in Sources */,
 				A0DA35C6258FD24B009F3038 /* SquareView.swift in Sources */,
+				A0C25EA625A533A60070EDF1 /* ClassicGridWidget.swift in Sources */,
 				A0374D3D259E4EC2003D6D42 /* IntentHandler.swift in Sources */,
 				A0DD0EF72593C0D300428149 /* CColor+CoreDataClass.swift in Sources */,
 			);

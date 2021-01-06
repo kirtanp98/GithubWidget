@@ -7,16 +7,11 @@
 
 import Foundation
 
-struct Contribution {
-    let date: Date
-    let level: Int //make to enum
-    let count: Int
-}
-
 struct Contribute {
     let date: Date
     let level: Int //make to enum
     let count: Int
+    var empty = false
     
     static var levels = [String]()
     
@@ -24,3 +19,4 @@ struct Contribute {
         return levels.firstIndex(of: string) ?? 0
     }
 }
+
