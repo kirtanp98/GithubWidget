@@ -112,7 +112,8 @@ struct GithubWidgetsEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        CalendarWidget(background: entry.background, light: entry.light, dark: entry.dark, contribution: entry.contribution)
+        //ClassicGridWidget
+        ClassicGridWidget(background: entry.background, light: entry.light, dark: entry.dark, contribution: entry.contribution)
     }
 }
 

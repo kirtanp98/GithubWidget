@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 
 struct ClassicGridWidget: View {
     
@@ -37,7 +38,7 @@ struct ClassicGridWidget: View {
             ZStack {
                 if let back = background {
                     if back.isImage {
-                        
+
                         if colorScheme == .dark {
                             Image(uiImage: back.wrappedDarkBackground!)
                                 .resizable()
@@ -51,7 +52,7 @@ struct ClassicGridWidget: View {
                                 .frame(width: geometry.size.width)
                                 .clipped()
                         }
-                        
+
                     } else {
                         colorScheme == .dark ? back.wrappedDarkColor : back.wrappedLightColor
                     }
@@ -59,8 +60,10 @@ struct ClassicGridWidget: View {
                 
                 VStack(alignment: .center, spacing: 0) {
                     HStack {
-                        Circle()
+                        KFImage(URL(string: "https://avatars0.githubusercontent.com/u/28634279?u=465dcd4d6b590ff241c6257bd4baf7134264ea39&v=4")!)
+                            .resizable()
                             .frame(width: (geometry.size.height * 0.12), height: (geometry.size.height * 0.12))
+                        //https://avatars0.githubusercontent.com/u/28634279?u=465dcd4d6b590ff241c6257bd4baf7134264ea39&v=4
                         Text("Kirtan Patel")
                             .font(.caption)
                             .foregroundColor(.gray)
@@ -105,7 +108,7 @@ struct ClassicGridWidget: View {
                     columns = Array(repeating: GridItem(.flexible(), spacing: 2, alignment: .center), count: 7)
                 }
             }
-            .background(Color.red)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }

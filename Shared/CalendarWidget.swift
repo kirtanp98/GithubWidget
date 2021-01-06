@@ -47,7 +47,7 @@ struct CalendarWidget: View {
                                 .frame(width: geometry.size.width)
                                 .clipped()
                         }
-                        
+
                     } else {
                         colorScheme == .dark ? back.wrappedDarkColor : back.wrappedLightColor
                     }
@@ -69,8 +69,10 @@ struct CalendarWidget: View {
                     
                     columns = Array(repeating: GridItem(.flexible(), spacing: 0, alignment: .center), count: 7)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-        }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
