@@ -49,6 +49,7 @@
 		A07B756C25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */; };
 		A07B756D25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */; };
 		A07B756E25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */; };
+		A07B757925AA40300005D68D /* AddAccentColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B757825AA40300005D68D /* AddAccentColorView.swift */; };
 		A0A91AFA2597CAAE0039E1A0 /* AddBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */; };
 		A0A91AFE2597CB680039E1A0 /* Background+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */; };
 		A0A91AFF2597CB680039E1A0 /* Background+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */; };
@@ -159,6 +160,7 @@
 		A07B755525AA2AB30005D68D /* AccentColorGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorGridView.swift; sourceTree = "<group>"; };
 		A07B756725AA3A800005D68D /* AccColor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccColor+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccColor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A07B757825AA40300005D68D /* AddAccentColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccentColorView.swift; sourceTree = "<group>"; };
 		A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBackgroundView.swift; sourceTree = "<group>"; };
 		A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				A07B755525AA2AB30005D68D /* AccentColorGridView.swift */,
+				A07B757825AA40300005D68D /* AddAccentColorView.swift */,
 			);
 			path = "Accent Color";
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				A0CA68A0258E5E2F009847DF /* Contribution.swift in Sources */,
 				A0A91AFE2597CB680039E1A0 /* Background+CoreDataClass.swift in Sources */,
 				A0C25EA525A533A60070EDF1 /* ClassicGridWidget.swift in Sources */,
+				A07B757925AA40300005D68D /* AddAccentColorView.swift in Sources */,
 				A0DD0EF62593C0D300428149 /* CColor+CoreDataClass.swift in Sources */,
 				A07B756C25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */,
 				A0CA68B7258E94AD009847DF /* UserContributionFetcher.swift in Sources */,

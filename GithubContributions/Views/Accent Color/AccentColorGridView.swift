@@ -14,24 +14,51 @@ struct AccentColorGridView: View {
     
     @State var showModal = false
     
-    let columns = [GridItem(.adaptive(minimum: 0)), GridItem(.adaptive(minimum: 0)), GridItem(.adaptive(minimum: 0))]
+    let columns = Array(repeating: GridItem.init(.flexible(), spacing: 5), count: 3) //[GridItem(.adaptive(minimum: 50)), GridItem(.adaptive(minimum: 50)), GridItem(.adaptive(minimum: 50))]
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, alignment: .center, spacing: 0) {
+            LazyVGrid(columns: columns, alignment: .center, spacing: 10) {
                 ForEach(accentColors, id: \.wrappedId) { item in
-                    SplitCircle(colorOne: item.wrappedLight, colorTwo: item.wrappedDark, size: 50)
+                    VStack {
+                        Text(item.wrappedName)
+                            .foregroundColor(.gray)
+                        SplitCircle(colorOne: item.wrappedLight, colorTwo: item.wrappedDark, size: 50)
+                    }
+                    .animation(.easeInOut)
+                    .contextMenu {
+                        Button(action: {
+                            withAnimation {
+                                self.moc.delete(item)
+                                
+                                if self.moc.hasChanges{
+                                    do{
+                                        try self.moc.save()
+                                    }catch{
+                                        print("Error Saving")
+                                    }
+                                }
+                            }
+                        }) {
+                            Text("Delete")
+                            Image(systemName: "trash")
+                        }
+                    }
                 }
             }
         }.navigationTitle("Accent Color")
+        .sheet(isPresented: $showModal, content: {
+            AddAccentColorView()
+                .environment(\.managedObjectContext, moc)
+        })
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
-                        showModal.toggle()
+                    showModal.toggle()
                 } label: {
                     Image(systemName: "plus")
                 }
-
+                
             }
         }
     }
