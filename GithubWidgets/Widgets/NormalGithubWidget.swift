@@ -1,29 +1,29 @@
 //
-//  GithubWidgets.swift
-//  GithubWidgets
+//  NormalGithubWidget.swift
+//  GithubWidgetsExtension
 //
-//  Created by Kirtan Patel on 12/20/20.
+//  Created by Kirtan Patel on 1/9/21.
 //
 
 import WidgetKit
 import SwiftUI
 import Intents
 
-struct Provider: IntentTimelineProvider {
+struct ClassicProvider: IntentTimelineProvider {
     
     let fetcher = DataFetcher()
     
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), contribution: [], background: nil, light: Color.githubGreen, dark: Color.githubGreen)
+    func placeholder(in context: Context) -> SimpleNormalEntry {
+        SimpleNormalEntry(date: Date(), configuration: NormalConfigurationIntent(), contribution: [], background: nil, light: Color.githubGreen, dark: Color.githubGreen, accentColor: .gray)
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration, contribution: [], background: nil, light: Color.githubGreen, dark: Color.githubGreen)
+    func getSnapshot(for configuration: NormalConfigurationIntent, in context: Context, completion: @escaping (SimpleNormalEntry) -> ()) {
+        let entry = SimpleNormalEntry(date: Date(), configuration: configuration, contribution: [], background: nil, light: Color.githubGreen, dark: Color.githubGreen, accentColor: .gray)
         completion(entry)
     }
 
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
-        var entries: [SimpleEntry] = []
+    func getTimeline(for configuration: NormalConfigurationIntent, in context: Context, completion: @escaping (Timeline<SimpleNormalEntry>) -> ()) {
+        var entries: [SimpleNormalEntry] = []
         let currentDate = Date()
         
         var lightColor = Color.githubGreen
@@ -48,7 +48,7 @@ struct Provider: IntentTimelineProvider {
                     let fetchUser = UserDataFetcher();
                     
                     fetchUser.fetchData(user: currentUser.userName) { contributions in
-                        let entry = SimpleEntry(date: currentDate, configuration: configuration, contribution: contributions, background: widgetBackground, light: lightColor, dark: darkColor)
+                        let entry = SimpleNormalEntry(date: currentDate, configuration: configuration, contribution: contributions, background: widgetBackground, light: lightColor, dark: darkColor, accentColor: .gray)
                         entries.append(entry)
                         let timeline = Timeline(entries: entries, policy: .atEnd)
                         completion(timeline)
@@ -58,7 +58,7 @@ struct Provider: IntentTimelineProvider {
                 let fetchUser = UserDataFetcher();
                 
                 fetchUser.fetchData(user: userName) { contributions in
-                    let entry = SimpleEntry(date: currentDate, configuration: configuration, contribution: contributions, background: widgetBackground, light: lightColor, dark: darkColor)
+                    let entry = SimpleNormalEntry(date: currentDate, configuration: configuration, contribution: contributions, background: widgetBackground, light: lightColor, dark: darkColor, accentColor: .gray)
                     entries.append(entry)
                     let timeline = Timeline(entries: entries, policy: .atEnd)
                     completion(timeline)
@@ -71,7 +71,7 @@ struct Provider: IntentTimelineProvider {
                 let fetchUser = UserDataFetcher();
                 
                 fetchUser.fetchData(user: currentUser.userName) { contributions in
-                    let entry = SimpleEntry(date: currentDate, configuration: configuration, contribution: contributions, background: widgetBackground, light: lightColor, dark: darkColor)
+                    let entry = SimpleNormalEntry(date: currentDate, configuration: configuration, contribution: contributions, background: widgetBackground, light: lightColor, dark: darkColor, accentColor: .gray)
                     entries.append(entry)
                     let timeline = Timeline(entries: entries, policy: .atEnd)
                     completion(timeline)
@@ -81,7 +81,7 @@ struct Provider: IntentTimelineProvider {
 
     }
     
-    func getColorPalette(for config: ConfigurationIntent) -> Palette? {
+    func getColorPalette(for config: NormalConfigurationIntent) -> Palette? {
         guard let id = config.colorPalette?.identifier else { return nil }
         
         guard let colorPalette = fetcher.getColorByID(uuid: id) else { return nil }
@@ -90,7 +90,7 @@ struct Provider: IntentTimelineProvider {
     }
     
     
-    func getBackground(for config: ConfigurationIntent) -> Background? {
+    func getBackground(for config: NormalConfigurationIntent) -> Background? {
         guard let id = config.background?.identifier else { return nil }
         
         guard let background = fetcher.getBackgroundByID(uuid: id) else { return nil }
@@ -99,48 +99,34 @@ struct Provider: IntentTimelineProvider {
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct SimpleNormalEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
+    let configuration: NormalConfigurationIntent
     let contribution: [Contribute]
     let background: Background?
     let light: [Color]
     let dark: [Color]
+    let accentColor: Color
 }
 
-struct GithubWidgetsEntryView : View {
-    var entry: Provider.Entry
+
+struct NormalGithubWidgetsEntryView : View {
+    var entry: ClassicProvider.Entry
 
     var body: some View {
-        CalendarWidget(background: entry.background, light: entry.light, dark: entry.dark, contribution: entry.contribution)
+        ClassicGridWidget(background: entry.background, light: entry.light, dark: entry.dark, contribution: entry.contribution)
     }
 }
 
-struct MinimalGithubWidget: Widget {
-    let kind: String = "MinimalGithubWidgets"
-
+struct NormalGithubWidget: Widget {
+    let kind: String = "NormalGithubWidget"
+    
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            GithubWidgetsEntryView(entry: entry)
+        IntentConfiguration(kind: kind, intent: NormalConfigurationIntent.self, provider: ClassicProvider()) { entry in
+            NormalGithubWidgetsEntryView(entry: entry)
         }
-        .configurationDisplayName("Minimal Contribution Widget")
+        .configurationDisplayName("Contribution Widget")
         .description("This widget shows the recent most calendar contributions.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
-
-@main
-struct MyWidgetBundle: WidgetBundle {
-    @WidgetBundleBuilder
-    var body: some Widget {
-        MinimalGithubWidget()
-        NormalGithubWidget()
-    }
-}
-
-//struct GithubWidgets_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GithubWidgetsEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), contribution: []))
-//            .previewContext(WidgetPreviewContext(family: .systemSmall))
-//    }
-//}

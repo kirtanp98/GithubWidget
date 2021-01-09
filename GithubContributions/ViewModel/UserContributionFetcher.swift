@@ -50,7 +50,8 @@ class UserContributionFetcher: ObservableObject {
                     }
                     
                     for x in 0..<addToArray {
-                        var element = Contribute(date: Date(), level: 0, count: 0)
+                        let time = Date().addingTimeInterval(TimeInterval(x))
+                        var element = Contribute(date: time, level: 0, count: 0)
                         element.empty = true
                         self.contributions.append(element)
                     }

@@ -7,9 +7,33 @@
 
 import Intents
 
-class IntentHandler: INExtension, ConfigurationIntentHandling {
+class IntentHandler: INExtension, ConfigurationIntentHandling, NormalConfigurationIntentHandling {
+    
     let fetcher = DataFetcher()
     
+    func provideColorPaletteOptionsCollection(for intent: NormalConfigurationIntent, with completion: @escaping (INObjectCollection<ColorP>?, Error?) -> Void) {
+        let colors = fetcher.getColors()
+        
+        let transformedColor: [ColorP] = colors.map { ColorP(identifier: $0.wrappedId.uuidString, display: $0.wrappedName) }
+        
+        let collection = INObjectCollection(items: transformedColor)
+
+        completion(collection, nil)
+    }
+    
+    func provideBackgroundOptionsCollection(for intent: NormalConfigurationIntent, with completion: @escaping (INObjectCollection<BackgroundP>?, Error?) -> Void) {
+            
+            let backgrounds = fetcher.getBackgrounds()
+            
+            let transformedbackground: [BackgroundP] = backgrounds.map {
+                BackgroundP(identifier: $0.wrappedID.uuidString, display: $0.wrappedName)
+            }
+            
+            let collection = INObjectCollection(items: transformedbackground)
+
+            completion(collection, nil)
+    }
+        
     func provideColorPaletteOptionsCollection(for intent: ConfigurationIntent, with completion: @escaping (INObjectCollection<ColorP>?, Error?) -> Void) {
 //        let fetcher = DataFetcher()
         let colors = fetcher.getColors()

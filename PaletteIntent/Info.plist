@@ -30,6 +30,7 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
+				<string>NormalConfigurationIntent</string>
 				<string>ConfigurationIntent</string>
 			</array>
 		</dict>

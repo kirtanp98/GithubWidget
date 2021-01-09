@@ -86,6 +86,13 @@ struct ContentView: View {
                                 .renderingMode(.original)
                         }
                     }
+                    
+                    Label {
+                        Text("Accent Colors")
+                     } icon: {
+                        Image(systemName: "sparkles")
+                            .renderingMode(.original)
+                    }
                 }
                 
                 Section(header: Text("Tip")) {

@@ -59,10 +59,11 @@ struct ClassicGridWidget: View {
                 }
                 
                 VStack(alignment: .center, spacing: 0) {
-                    HStack {
+                    HStack(spacing: 5) {
                         KFImage(URL(string: "https://avatars0.githubusercontent.com/u/28634279?u=465dcd4d6b590ff241c6257bd4baf7134264ea39&v=4")!)
                             .resizable()
-                            .frame(width: (geometry.size.height * 0.12), height: (geometry.size.height * 0.12))
+                            .frame(width: (geometry.size.height * 0.11), height: (geometry.size.height * 0.11))
+                            .clipShape(Circle())
                         //https://avatars0.githubusercontent.com/u/28634279?u=465dcd4d6b590ff241c6257bd4baf7134264ea39&v=4
                         Text("Kirtan Patel")
                             .font(.caption)

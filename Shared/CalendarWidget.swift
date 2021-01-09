@@ -69,10 +69,11 @@ struct CalendarWidget: View {
                     
                     columns = Array(repeating: GridItem(.flexible(), spacing: 0, alignment: .center), count: 7)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                //.frame(maxWidth: .infinity, maxHeight: .infinity)
+                
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+//            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }//.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
