@@ -84,10 +84,6 @@ struct ClassicGridWidget: View {
                                 ZStack {
                                     SquareView(contribution: item, lightColorPalette: light, darkColorPalette: dark, size: (height/7) - 2)
                                         .cornerRadius(3)
-                                                                        
-//                                    RoundedRectangle(cornerRadius: 3)
-//                                        .strokeBorder(Color.gray.opacity(0.2),lineWidth: 1)
-//                                        .frame(width: (height/7) - 2, height: (height/7) - 2)
                                 }
                             }
                                 

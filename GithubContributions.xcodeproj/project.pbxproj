@@ -42,6 +42,13 @@
 		A06E68E4259A63FF001E6E09 /* CalendarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */; };
 		A06E68E5259A63FF001E6E09 /* CalendarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */; };
 		A07B754C25AA18140005D68D /* NormalGithubWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B754B25AA18140005D68D /* NormalGithubWidget.swift */; };
+		A07B755625AA2AB30005D68D /* AccentColorGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B755525AA2AB30005D68D /* AccentColorGridView.swift */; };
+		A07B756925AA3A800005D68D /* AccColor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756725AA3A800005D68D /* AccColor+CoreDataClass.swift */; };
+		A07B756A25AA3A800005D68D /* AccColor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756725AA3A800005D68D /* AccColor+CoreDataClass.swift */; };
+		A07B756B25AA3A800005D68D /* AccColor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756725AA3A800005D68D /* AccColor+CoreDataClass.swift */; };
+		A07B756C25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */; };
+		A07B756D25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */; };
+		A07B756E25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */; };
 		A0A91AFA2597CAAE0039E1A0 /* AddBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */; };
 		A0A91AFE2597CB680039E1A0 /* Background+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */; };
 		A0A91AFF2597CB680039E1A0 /* Background+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */; };
@@ -149,6 +156,9 @@
 		A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddColorPaletteView.swift; sourceTree = "<group>"; };
 		A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWidget.swift; sourceTree = "<group>"; };
 		A07B754B25AA18140005D68D /* NormalGithubWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalGithubWidget.swift; sourceTree = "<group>"; };
+		A07B755525AA2AB30005D68D /* AccentColorGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorGridView.swift; sourceTree = "<group>"; };
+		A07B756725AA3A800005D68D /* AccColor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccColor+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccColor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBackgroundView.swift; sourceTree = "<group>"; };
 		A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -249,6 +259,33 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		A07B757325AA3F8E0005D68D /* Palette */ = {
+			isa = PBXGroup;
+			children = (
+				A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */,
+				A0DD0EE62593A80C00428149 /* PaletteView.swift */,
+				A0385C7D2593A55E00FA0369 /* ColorPaletteSwabView.swift */,
+			);
+			path = Palette;
+			sourceTree = "<group>";
+		};
+		A07B757425AA3F9F0005D68D /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */,
+				A0DD0EE92593AA6400428149 /* BackgroundListView.swift */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
+		A07B757525AA3FC70005D68D /* Accent Color */ = {
+			isa = PBXGroup;
+			children = (
+				A07B755525AA2AB30005D68D /* AccentColorGridView.swift */,
+			);
+			path = "Accent Color";
+			sourceTree = "<group>";
+		};
 		A0C248002594EF72001F9C51 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +321,8 @@
 		A0CA687F258E570B009847DF /* GithubContributions */ = {
 			isa = PBXGroup;
 			children = (
+				A07B756725AA3A800005D68D /* AccColor+CoreDataClass.swift */,
+				A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */,
 				A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */,
 				A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */,
 				A0DD0EF22593C0D300428149 /* CColor+CoreDataClass.swift */,
@@ -353,15 +392,13 @@
 		A0CA68BE258EB00A009847DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A07B757525AA3FC70005D68D /* Accent Color */,
+				A07B757425AA3F9F0005D68D /* Background */,
+				A07B757325AA3F8E0005D68D /* Palette */,
 				A0C248002594EF72001F9C51 /* Util */,
 				A0CA6882258E570B009847DF /* ContentView.swift */,
 				A0CA68BF258EB01B009847DF /* SquareView.swift */,
-				A0385C7D2593A55E00FA0369 /* ColorPaletteSwabView.swift */,
-				A0DD0EE62593A80C00428149 /* PaletteView.swift */,
-				A0DD0EE92593AA6400428149 /* BackgroundListView.swift */,
 				A0C248082594F029001F9C51 /* BaseView.swift */,
-				A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */,
-				A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -566,12 +603,14 @@
 				A0374D6B259E5DFD003D6D42 /* GithubContributions.xcdatamodeld in Sources */,
 				A0374D4E259E5121003D6D42 /* Palette+CoreDataProperties.swift in Sources */,
 				A0374D4A259E5121003D6D42 /* Palette+CoreDataClass.swift in Sources */,
+				A07B756B25AA3A800005D68D /* AccColor+CoreDataClass.swift in Sources */,
 				A0374D45259E4FE6003D6D42 /* GithubWidgets.intentdefinition in Sources */,
 				A0374D5B259E5862003D6D42 /* URLExtension.swift in Sources */,
 				A0374D4C259E5121003D6D42 /* Background+CoreDataClass.swift in Sources */,
 				A0374D4F259E5121003D6D42 /* CColor+CoreDataClass.swift in Sources */,
 				A0374D4B259E5121003D6D42 /* CColor+CoreDataProperties.swift in Sources */,
 				A0374D33259E4E77003D6D42 /* IntentHandler.swift in Sources */,
+				A07B756E25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +622,7 @@
 				A0374D59259E5862003D6D42 /* URLExtension.swift in Sources */,
 				A016820D25916BC3008925B6 /* AuthManager.swift in Sources */,
 				A0DD0EEF2593BEEA00428149 /* GithubContributions.xcdatamodeld in Sources */,
+				A07B755625AA2AB30005D68D /* AccentColorGridView.swift in Sources */,
 				A0CA68C0258EB01B009847DF /* SquareView.swift in Sources */,
 				A0CA68B4258E904B009847DF /* Network.swift in Sources */,
 				A06E68E4259A63FF001E6E09 /* CalendarWidget.swift in Sources */,
@@ -601,12 +641,14 @@
 				A0A91AFE2597CB680039E1A0 /* Background+CoreDataClass.swift in Sources */,
 				A0C25EA525A533A60070EDF1 /* ClassicGridWidget.swift in Sources */,
 				A0DD0EF62593C0D300428149 /* CColor+CoreDataClass.swift in Sources */,
+				A07B756C25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */,
 				A0CA68B7258E94AD009847DF /* UserContributionFetcher.swift in Sources */,
 				A05DF8CB25917C9400C1A0F3 /* API.swift in Sources */,
 				A0DD0EE72593A80C00428149 /* PaletteView.swift in Sources */,
 				A034F5342597E345003999A1 /* ImagePickerView.swift in Sources */,
 				A0CA68C5258EB22C009847DF /* ColorExtension.swift in Sources */,
 				A0DD0EF82593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */,
+				A07B756925AA3A800005D68D /* AccColor+CoreDataClass.swift in Sources */,
 				A0A91AFF2597CB680039E1A0 /* Background+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,6 +664,7 @@
 				A0DA35A9258FD216009F3038 /* GithubWidgets.swift in Sources */,
 				A0374D5A259E5862003D6D42 /* URLExtension.swift in Sources */,
 				A0DD0EF02593BEEA00428149 /* GithubContributions.xcdatamodeld in Sources */,
+				A07B756D25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */,
 				A016827425917798008925B6 /* UserDataFetcher.swift in Sources */,
 				A0DA35BA258FD235009F3038 /* Network.swift in Sources */,
 				A0DD0EFD2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */,
@@ -632,6 +675,7 @@
 				A0DA35C3258FD247009F3038 /* ColorExtension.swift in Sources */,
 				A0F921D525A0ED1700BA66F5 /* UserInfoFetcher.swift in Sources */,
 				A0DD0EF92593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */,
+				A07B756A25AA3A800005D68D /* AccColor+CoreDataClass.swift in Sources */,
 				A0DA35C0258FD243009F3038 /* Contribution.swift in Sources */,
 				A05DF8CC25917C9400C1A0F3 /* API.swift in Sources */,
 				A0DA35C6258FD24B009F3038 /* SquareView.swift in Sources */,

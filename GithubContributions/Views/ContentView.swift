@@ -86,12 +86,13 @@ struct ContentView: View {
                                 .renderingMode(.original)
                         }
                     }
-                    
-                    Label {
-                        Text("Accent Colors")
-                     } icon: {
-                        Image(systemName: "sparkles")
-                            .renderingMode(.original)
+                    NavigationLink(destination: AccentColorGridView()) {
+                        Label {
+                            Text("Accent Colors")
+                         } icon: {
+                            Image(systemName: "sparkles")
+                                .renderingMode(.original)
+                        }
                     }
                 }
                 
