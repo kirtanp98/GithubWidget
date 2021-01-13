@@ -94,6 +94,7 @@
 		A0DD0EFB2593C0D300428149 /* Palette+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF42593C0D300428149 /* Palette+CoreDataClass.swift */; };
 		A0DD0EFC2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF52593C0D300428149 /* Palette+CoreDataProperties.swift */; };
 		A0DD0EFD2593C0D300428149 /* Palette+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EF52593C0D300428149 /* Palette+CoreDataProperties.swift */; };
+		A0E930DD25AE731F00D4EFCC /* ContributionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E930DC25AE731F00D4EFCC /* ContributionGenerator.swift */; };
 		A0F921D525A0ED1700BA66F5 /* UserInfoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F921D425A0ED1700BA66F5 /* UserInfoFetcher.swift */; };
 /* End PBXBuildFile section */
 
@@ -195,6 +196,7 @@
 		A0DD0EF32593C0D300428149 /* CColor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CColor+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		A0DD0EF42593C0D300428149 /* Palette+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Palette+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		A0DD0EF52593C0D300428149 /* Palette+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Palette+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		A0E930DC25AE731F00D4EFCC /* ContributionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionGenerator.swift; sourceTree = "<group>"; };
 		A0F921D425A0ED1700BA66F5 /* UserInfoFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -371,6 +373,7 @@
 				A0CA6889258E570E009847DF /* Persistence.swift */,
 				A0CA68B6258E94AD009847DF /* UserContributionFetcher.swift */,
 				A016820C25916BC3008925B6 /* AuthManager.swift */,
+				A0E930DC25AE731F00D4EFCC /* ContributionGenerator.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				A0C247FE2594EF3D001F9C51 /* VisualEffectView.swift in Sources */,
 				A0A91AFA2597CAAE0039E1A0 /* AddBackgroundView.swift in Sources */,
 				A0CA688A258E570E009847DF /* Persistence.swift in Sources */,
+				A0E930DD25AE731F00D4EFCC /* ContributionGenerator.swift in Sources */,
 				A0385C7E2593A55E00FA0369 /* ColorPaletteSwabView.swift in Sources */,
 				A0C248092594F029001F9C51 /* BaseView.swift in Sources */,
 				A06A78F1259A4640004431F2 /* NewAddColorPaletteView.swift in Sources */,

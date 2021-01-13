@@ -23,6 +23,7 @@ struct ClassicProvider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: NormalConfigurationIntent, in context: Context, completion: @escaping (Timeline<SimpleNormalEntry>) -> ()) {
+        print("Reloading normal github widget")
         var entries: [SimpleNormalEntry] = []
         let currentDate = Date()
         

@@ -43,6 +43,7 @@ class UserContributionFetcher: ObservableObject {
                     self.contributions = (graphQLResult.data?.user?.contributionsCollection.contributionCalendar.weeks
                         .flatMap{ $0.contributionDays }
                                             .compactMap{ Contribute(date: self.dateFormatter.date(from: $0.date)!, level: Contribute.colorToLevel($0.color), count: $0.contributionCount) })!
+                    
                     let mod = self.contributions.count % 7
                     var addToArray = 0
                     if mod > 0 {
@@ -55,7 +56,6 @@ class UserContributionFetcher: ObservableObject {
                         element.empty = true
                         self.contributions.append(element)
                     }
-                    
                     self.loading = false
                 }
             case .failure(let error):
@@ -63,6 +63,7 @@ class UserContributionFetcher: ObservableObject {
             }
         }
     }
+    
 }
 
 //yyyy-mm-dd

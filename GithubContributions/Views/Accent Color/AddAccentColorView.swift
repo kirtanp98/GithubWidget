@@ -15,6 +15,8 @@ struct AddAccentColorView: View {
     @FetchRequest(entity: Palette.entity(), sortDescriptors: []) var palettes: FetchedResults<Palette>
     @FetchRequest(entity: Background.entity(), sortDescriptors: []) var backgrounds: FetchedResults<Background>
     
+    @ObservedObject var gen = ContributionGenerator()
+        
     @State var name = ""
     @State var colorPicker = 0
     @State var backgroundPicker = 0
@@ -28,21 +30,20 @@ struct AddAccentColorView: View {
             Form {
                 Section(header: Text("Preview")) {
                     VStack(alignment: .center){
-                        TabView {
-                            Text("hi")
-                                .font(.body)
-                                .foregroundColor(.black)
-                                .frame(width: 100, height: 150)
-                                .background(Color.blue)
-                            
-                            Text("hi")
-                                .font(.body)
-                                .foregroundColor(.black)
-                                .frame(width: 100, height: 150)
-                                .background(Color.red)
-                        }.tabViewStyle(PageTabViewStyle())
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack(spacing: 100) {
+                                ClassicGridWidget(background: backgrounds[backgroundPicker], light: palettes[colorPicker].lightColorArray, dark: palettes[colorPicker].darkColorArray, contribution: gen.contributions)
+                                    .frame(width:169, height: 169)
+                                    .cornerRadius(20)
+
+                                CalendarWidget(background: backgrounds[backgroundPicker], light: palettes[colorPicker].lightColorArray, dark: palettes[colorPicker].darkColorArray, contribution: gen.contributions)
+                                    .frame(width:169, height: 169)
+                                    .cornerRadius(20)
+                                
+                            }
+                        }
                     }.frame(maxWidth: .infinity)
-                    .background(Color.red)
+                    
                     Picker("Palette", selection: $colorPicker) {
                         ForEach(0 ..< palettes.count) { index in
                             HStack {
@@ -145,6 +146,11 @@ struct AddAccentColorView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Add Accent Color")
             .listStyle(InsetGroupedListStyle())
+            .onAppear {
+                gen.generate()
+                print("generating")
+            }
+
         }
     }
 }

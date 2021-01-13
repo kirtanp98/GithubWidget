@@ -17,7 +17,7 @@ struct PaletteView: View {
                 .foregroundColor(.gray)
             PaletteRowView(palette: palette)
         }.padding(.bottom, 10)
-
+        
     }
 }
 
@@ -27,24 +27,18 @@ struct PaletteRowView: View {
     
     var body: some View {
         HStack {
-            
             ForEach(palette.colorArray, id: \.wrappedLevel) { pal in
                 Spacer()
-                Button(action: {
-                    print(pal.wrappedLevel)
-                }) {
-                    VStack {
-                        SplitCircle(colorOne: pal.wrappedLightColor, colorTwo: pal.wrappedDarkColor, size: 50)
-                        Text("Level \(pal.wrappedLevel)")
-                            .foregroundColor(.gray)
-                            .font(.caption2)
-                    }
-
-                }.buttonStyle(PlainButtonStyle())
+                VStack {
+                    SplitCircle(colorOne: pal.wrappedLightColor, colorTwo: pal.wrappedDarkColor, size: 50)
+                    Text("Level \(pal.wrappedLevel)")
+                        .foregroundColor(.gray)
+                        .font(.caption2)
+                }
             }
             
             Spacer()
-        }
+        }.drawingGroup()
     }
 }
 

@@ -14,7 +14,7 @@ struct AccentColorGridView: View {
     
     @State var showModal = false
     
-    let columns = Array(repeating: GridItem.init(.flexible(), spacing: 5), count: 3) //[GridItem(.adaptive(minimum: 50)), GridItem(.adaptive(minimum: 50)), GridItem(.adaptive(minimum: 50))]
+    let columns = Array(repeating: GridItem.init(.flexible(), spacing: 5), count: 3) 
     
     var body: some View {
         ScrollView {

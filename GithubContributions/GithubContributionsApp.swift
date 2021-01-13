@@ -26,9 +26,9 @@ struct GithubContributionsApp: App {
                         print("App is active")
                       case .inactive:
                         print("App is inactive")
-                        WidgetCenter.shared.reloadAllTimelines()
                       case .background:
                         print("App is in background")
+                        WidgetCenter.shared.reloadAllTimelines()
                       @unknown default:
                         print("Oh - interesting: I received an unexpected new value.")
                       }

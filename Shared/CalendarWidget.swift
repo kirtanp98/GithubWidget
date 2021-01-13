@@ -31,27 +31,29 @@ struct CalendarWidget: View {
         GeometryReader { geometry in
             
             ZStack {
-                if let back = background {
-                    if back.isImage {
-                        
-                        if colorScheme == .dark {
-                            Image(uiImage: back.wrappedDarkBackground!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: geometry.size.width)
-                                .clipped()
-                        } else {
-                            Image(uiImage: back.wrappedLightBackground!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: geometry.size.width)
-                                .clipped()
-                        }
+                ZStack {
+                    if let back = background {
+                        if back.isImage {
+                            
+                            if colorScheme == .dark {
+                                Image(uiImage: back.wrappedDarkBackground!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: geometry.size.width)
+                                    .clipped()
+                            } else {
+                                Image(uiImage: back.wrappedLightBackground!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: geometry.size.width)
+                                    .clipped()
+                            }
 
-                    } else {
-                        colorScheme == .dark ? back.wrappedDarkColor : back.wrappedLightColor
+                        } else {
+                            colorScheme == .dark ? back.wrappedDarkColor : back.wrappedLightColor
+                        }
                     }
-                }
+                }.frame(width: geometry.size.width, height: geometry.size.height)
                 
                 VStack(alignment: .center) {
                     LazyHGrid(rows: columns, alignment: .center, spacing: 0){

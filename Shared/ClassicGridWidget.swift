@@ -25,88 +25,95 @@ struct ClassicGridWidget: View {
     
     @State var contribution: [Contribute]
     
-    @State var columns = [
-        GridItem(.fixed(1)),
-    ]
+    @State var columns = Array(repeating: GridItem(.flexible(), spacing: 2, alignment: .center), count: 7)
     
     private let ratio: CGFloat = 0.20
     private let spacing: CGFloat = 0.1
     
+    @State var finishedRender = false
+    
     var body: some View {
         GeometryReader { geometry in
-            
             ZStack {
-                if let back = background {
-                    if back.isImage {
-
-                        if colorScheme == .dark {
-                            Image(uiImage: back.wrappedDarkBackground!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: geometry.size.width)
-                                .clipped()
-                        } else {
-                            Image(uiImage: back.wrappedLightBackground!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: geometry.size.width)
-                                .clipped()
-                        }
-
-                    } else {
-                        colorScheme == .dark ? back.wrappedDarkColor : back.wrappedLightColor
-                    }
-                }
-                
-                VStack(alignment: .center, spacing: 0) {
-                    HStack(spacing: 5) {
-                        KFImage(URL(string: "https://avatars0.githubusercontent.com/u/28634279?u=465dcd4d6b590ff241c6257bd4baf7134264ea39&v=4")!)
-                            .resizable()
-                            .frame(width: (geometry.size.height * 0.11), height: (geometry.size.height * 0.11))
-                            .clipShape(Circle())
-                        //https://avatars0.githubusercontent.com/u/28634279?u=465dcd4d6b590ff241c6257bd4baf7134264ea39&v=4
-                        Text("Kirtan Patel")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                        Spacer()
-                        if geometry.size.width > 169 {
-                            Text("\(100) contributions")
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                        }
-                    }
-                    .frame(height: remain * ratio)
-                    LazyHGrid(rows: columns, alignment: .center, spacing: 2){
-                        ForEach(contribution.suffix(totalSquares), id: \.date) { item in
-                            if item.empty {
-                                EmptyView().frame(width: (height/7) - 2, height: (height/7) - 2)
-                            } else {
-                                ZStack {
-                                    SquareView(contribution: item, lightColorPalette: light, darkColorPalette: dark, size: (height/7) - 2)
-                                        .cornerRadius(3)
+                if finishedRender {
+                    ZStack {
+                        ZStack {
+                            if let back = background {
+                                if back.isImage {
+                                    if colorScheme == .dark {
+                                        Image(uiImage: back.wrappedDarkBackground!)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(maxWidth: .infinity)
+                                            .clipped()
+                                    } else {
+                                        Image(uiImage: back.wrappedLightBackground!)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(maxWidth: .infinity)
+                                            .clipped()
+                                    }
+                                    Text("poo").font(.title)
+                                        .foregroundColor(.red)
+                                } else {
+                                    colorScheme == .dark ? back.wrappedDarkColor : back.wrappedLightColor
                                 }
                             }
-                                
                         }
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        
+                        VStack(alignment: .center, spacing: 0) {
+                            HStack(spacing: 5) {
+                                KFImage(URL(string: "https://avatars0.githubusercontent.com/u/28634279?u=465dcd4d6b590ff241c6257bd4baf7134264ea39&v=4")!)
+                                    .resizable()
+                                    .frame(width: (geometry.size.height * 0.11), height: (geometry.size.height * 0.11))
+                                    .clipShape(Circle())
+                                Text("Kirtan Patel")
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                Spacer()
+                                if geometry.size.width > 169 {
+                                    Text("\(100) contributions")
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                            .frame(height: remain * ratio)
+                            LazyHGrid(rows: columns, alignment: .center, spacing: 2){
+                                ForEach(contribution.suffix(totalSquares), id: \.date) { item in
+                                    if item.empty {
+                                        EmptyView().frame(width: (height/7) - 2, height: (height/7) - 2)
+                                    } else {
+                                        ZStack {
+                                            SquareView(contribution: item, lightColorPalette: light, darkColorPalette: dark, size: (height/7) - 2)
+                                                .cornerRadius(3)
+                                        }
+                                    }
+                                        
+                                }
+                            }
+                                .frame(height: remain * (1-ratio))
+                            Spacer().frame(height: geometry.size.height * spacing)
+                        }
+                        .frame(width: width * 0.9)
                     }
-                        .frame(height: remain * (1-ratio))
-                    Spacer().frame(height: geometry.size.height * spacing)
-                }
-                .frame(width: width * 0.9)
-                .onAppear {
-                    remain = geometry.size.height - (geometry.size.height * spacing)
-                    width = geometry.size.width * 0.9
-                    height = remain * (1-ratio)
-                    
-                    let squareLength = floor(height/7)
-                    
-                    totalSquares = Int(7 * floor(width/(squareLength)))
-                    
-                    columns = Array(repeating: GridItem(.flexible(), spacing: 2, alignment: .center), count: 7)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear {
+                remain = geometry.size.height - (geometry.size.height * spacing)
+                width = geometry.size.width * 0.9
+                height = remain * (1-ratio)
+                
+                let squareLength = floor(height/7)
+                
+                totalSquares = Int(7 * floor(width/(squareLength)))
+                
+                finishedRender = true
+            }
+
         }
+        
     }
 }
 
