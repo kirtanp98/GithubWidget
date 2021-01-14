@@ -41,6 +41,8 @@
 		A06A78F1259A4640004431F2 /* NewAddColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */; };
 		A06E68E4259A63FF001E6E09 /* CalendarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */; };
 		A06E68E5259A63FF001E6E09 /* CalendarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */; };
+		A0777CCB25AFC0F2008D1CD9 /* BackgroundWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0777CCA25AFC0F2008D1CD9 /* BackgroundWidgetView.swift */; };
+		A0777CCC25AFC0F2008D1CD9 /* BackgroundWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0777CCA25AFC0F2008D1CD9 /* BackgroundWidgetView.swift */; };
 		A07B754C25AA18140005D68D /* NormalGithubWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B754B25AA18140005D68D /* NormalGithubWidget.swift */; };
 		A07B755625AA2AB30005D68D /* AccentColorGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B755525AA2AB30005D68D /* AccentColorGridView.swift */; };
 		A07B756925AA3A800005D68D /* AccColor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756725AA3A800005D68D /* AccColor+CoreDataClass.swift */; };
@@ -157,6 +159,7 @@
 		A05DF8CA25917C9400C1A0F3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = GithubContributions/API.swift; sourceTree = SOURCE_ROOT; };
 		A06A78F0259A4640004431F2 /* NewAddColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddColorPaletteView.swift; sourceTree = "<group>"; };
 		A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWidget.swift; sourceTree = "<group>"; };
+		A0777CCA25AFC0F2008D1CD9 /* BackgroundWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundWidgetView.swift; sourceTree = "<group>"; };
 		A07B754B25AA18140005D68D /* NormalGithubWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalGithubWidget.swift; sourceTree = "<group>"; };
 		A07B755525AA2AB30005D68D /* AccentColorGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorGridView.swift; sourceTree = "<group>"; };
 		A07B756725AA3A800005D68D /* AccColor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccColor+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -259,6 +262,7 @@
 				A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */,
 				A0374D58259E5862003D6D42 /* URLExtension.swift */,
 				A0C25EA425A533A60070EDF1 /* ClassicGridWidget.swift */,
+				A0777CCA25AFC0F2008D1CD9 /* BackgroundWidgetView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -634,6 +638,7 @@
 				A06E68E4259A63FF001E6E09 /* CalendarWidget.swift in Sources */,
 				A0C247FE2594EF3D001F9C51 /* VisualEffectView.swift in Sources */,
 				A0A91AFA2597CAAE0039E1A0 /* AddBackgroundView.swift in Sources */,
+				A0777CCB25AFC0F2008D1CD9 /* BackgroundWidgetView.swift in Sources */,
 				A0CA688A258E570E009847DF /* Persistence.swift in Sources */,
 				A0E930DD25AE731F00D4EFCC /* ContributionGenerator.swift in Sources */,
 				A0385C7E2593A55E00FA0369 /* ColorPaletteSwabView.swift in Sources */,
@@ -665,6 +670,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0777CCC25AFC0F2008D1CD9 /* BackgroundWidgetView.swift in Sources */,
 				A0DA35BD258FD23D009F3038 /* UserContributionFetcher.swift in Sources */,
 				A0374D52259E512F003D6D42 /* Background+CoreDataProperties.swift in Sources */,
 				A0374D53259E512F003D6D42 /* Background+CoreDataClass.swift in Sources */,

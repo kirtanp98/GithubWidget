@@ -35,14 +35,17 @@ struct AddAccentColorView: View {
                                 ClassicGridWidget(background: backgrounds[backgroundPicker], light: palettes[colorPicker].lightColorArray, dark: palettes[colorPicker].darkColorArray, contribution: gen.contributions)
                                     .frame(width:169, height: 169)
                                     .cornerRadius(20)
+                                    .padding(.leading)
 
                                 CalendarWidget(background: backgrounds[backgroundPicker], light: palettes[colorPicker].lightColorArray, dark: palettes[colorPicker].darkColorArray, contribution: gen.contributions)
                                     .frame(width:169, height: 169)
                                     .cornerRadius(20)
+                                    .padding(.trailing)
                                 
                             }
                         }
                     }.frame(maxWidth: .infinity)
+                    .padding(.vertical)
                     
                     Picker("Palette", selection: $colorPicker) {
                         ForEach(0 ..< palettes.count) { index in

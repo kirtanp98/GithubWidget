@@ -37,30 +37,7 @@ struct ClassicGridWidget: View {
             ZStack {
                 if finishedRender {
                     ZStack {
-                        ZStack {
-                            if let back = background {
-                                if back.isImage {
-                                    if colorScheme == .dark {
-                                        Image(uiImage: back.wrappedDarkBackground!)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(maxWidth: .infinity)
-                                            .clipped()
-                                    } else {
-                                        Image(uiImage: back.wrappedLightBackground!)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(maxWidth: .infinity)
-                                            .clipped()
-                                    }
-                                    Text("poo").font(.title)
-                                        .foregroundColor(.red)
-                                } else {
-                                    colorScheme == .dark ? back.wrappedDarkColor : back.wrappedLightColor
-                                }
-                            }
-                        }
-                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        BackgroundWidgetView(background: background, width: geometry.size.width, height: geometry.size.height)
                         
                         VStack(alignment: .center, spacing: 0) {
                             HStack(spacing: 5) {
@@ -89,15 +66,15 @@ struct ClassicGridWidget: View {
                                                 .cornerRadius(3)
                                         }
                                     }
-                                        
+                                    
                                 }
                             }
-                                .frame(height: remain * (1-ratio))
+                            .frame(height: remain * (1-ratio))
                             Spacer().frame(height: geometry.size.height * spacing)
                         }
                         .frame(width: width * 0.9)
                     }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
             .onAppear {
@@ -111,7 +88,7 @@ struct ClassicGridWidget: View {
                 
                 finishedRender = true
             }
-
+            
         }
         
     }

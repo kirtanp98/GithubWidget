@@ -27,55 +27,36 @@ struct CalendarWidget: View {
         GridItem(.fixed(1)),
     ]
     
+    @State var finishedRender = false
+    
     var body: some View {
         GeometryReader { geometry in
             
             ZStack {
-                ZStack {
-                    if let back = background {
-                        if back.isImage {
-                            
-                            if colorScheme == .dark {
-                                Image(uiImage: back.wrappedDarkBackground!)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: geometry.size.width)
-                                    .clipped()
-                            } else {
-                                Image(uiImage: back.wrappedLightBackground!)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: geometry.size.width)
-                                    .clipped()
+                if finishedRender {
+                    BackgroundWidgetView(background: background, width: geometry.size.width, height: geometry.size.height)
+                    
+                    VStack(alignment: .center) {
+                        LazyHGrid(rows: columns, alignment: .center, spacing: 0){
+                            ForEach(contribution.suffix(totalSquares), id: \.date) { item in
+                                SquareView(contribution: item, lightColorPalette: light, darkColorPalette: dark, size: (height/7))
                             }
-
-                        } else {
-                            colorScheme == .dark ? back.wrappedDarkColor : back.wrappedLightColor
                         }
-                    }
-                }.frame(width: geometry.size.width, height: geometry.size.height)
-                
-                VStack(alignment: .center) {
-                    LazyHGrid(rows: columns, alignment: .center, spacing: 0){
-                        ForEach(contribution.suffix(totalSquares), id: \.date) { item in
-                            SquareView(contribution: item, lightColorPalette: light, darkColorPalette: dark, size: (height/7))
-                        }
-                    }
-                }.onAppear {
-                    width = geometry.size.width
-                    height = geometry.size.height
-                    
-                    let squareLength = floor(height/7)
-                    
-                    totalSquares = Int(7 * floor(width/(squareLength)))
-                    
-                    columns = Array(repeating: GridItem(.flexible(), spacing: 0, alignment: .center), count: 7)
+                    }.frame(width: geometry.size.width, height: geometry.size.height)
                 }
-                //.frame(maxWidth: .infinity, maxHeight: .infinity)
-                
             }
-//            .frame(maxWidth: .infinity, maxHeight: .infinity)
-        }//.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear {
+                width = geometry.size.width
+                height = geometry.size.height
+                
+                let squareLength = floor(height/7)
+                
+                totalSquares = Int(7 * floor(width/(squareLength)))
+                
+                columns = Array(repeating: GridItem(.flexible(), spacing: 0, alignment: .center), count: 7)
+                finishedRender = true
+            }
+        }
     }
 }
 
