@@ -137,10 +137,12 @@ struct AddBackgroundView: View {
                         }
                         
                         if isImage {
-                            if let lImage = lightModeImage, let dImage = darkModeImage {
+                            if let lImage = lightModeImage {
                                 if customizeDarkMode {
-                                    newBackground.lightBackground = lImage.jpegData(compressionQuality: 0.5)
-                                    newBackground.darkBackground = dImage.jpegData(compressionQuality: 0.5)
+                                    if let dImage = darkModeImage {
+                                        newBackground.lightBackground = lImage.jpegData(compressionQuality: 0.5)
+                                        newBackground.darkBackground = dImage.jpegData(compressionQuality: 0.5)
+                                    }
                                 } else {
                                     newBackground.lightBackground = lImage.jpegData(compressionQuality: 0.5)
                                     newBackground.darkBackground = lImage.jpegData(compressionQuality: 0.5)
