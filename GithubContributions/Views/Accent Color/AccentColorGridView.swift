@@ -20,17 +20,13 @@ struct AccentColorGridView: View {
         ScrollView {
             LazyVGrid(columns: columns, alignment: .center, spacing: 10) {
                 ForEach(accentColors, id: \.wrappedId) { item in
-                    VStack {
-                        Text(item.wrappedName)
-                            .foregroundColor(.gray)
-                        SplitCircle(colorOne: item.wrappedLight, colorTwo: item.wrappedDark, size: 50)
-                    }
-                    .animation(.easeInOut)
-                    .contextMenu {
-                        Button(action: {
+                    Menu {
+                        Button("Edit", action: {})
+                        Divider()
+                        Button {
                             withAnimation {
                                 self.moc.delete(item)
-                                
+
                                 if self.moc.hasChanges{
                                     do{
                                         try self.moc.save()
@@ -39,11 +35,17 @@ struct AccentColorGridView: View {
                                     }
                                 }
                             }
-                        }) {
-                            Text("Delete")
-                            Image(systemName: "trash")
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                    } label: {
+                        VStack {
+                            Text(item.wrappedName)
+                                .foregroundColor(.gray)
+                            SplitCircle(colorOne: item.wrappedLight, colorTwo: item.wrappedDark, size: 50)
                         }
                     }
+                    .animation(.easeInOut)
                 }
             }
         }.navigationTitle("Accent Color")
