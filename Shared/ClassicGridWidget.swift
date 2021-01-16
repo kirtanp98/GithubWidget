@@ -24,6 +24,9 @@ struct ClassicGridWidget: View {
     @State var totalSquares: Int = 1
     
     @State var contribution: [Contribute]
+    @State var totalContribution: Int
+    @State var userProfileURL: String = "https://avatars0.githubusercontent.com/u/28634279?u=465dcd4d6b590ff241c6257bd4baf7134264ea39&v=4"
+    @State var username: String
     
     @State var columns = Array(repeating: GridItem(.flexible(), spacing: 2, alignment: .center), count: 7)
     
@@ -41,16 +44,16 @@ struct ClassicGridWidget: View {
                         
                         VStack(alignment: .center, spacing: 0) {
                             HStack(spacing: 5) {
-                                KFImage(URL(string: "https://avatars0.githubusercontent.com/u/28634279?u=465dcd4d6b590ff241c6257bd4baf7134264ea39&v=4")!)
+                                KFImage(URL(string: userProfileURL)!)
                                     .resizable()
                                     .frame(width: (geometry.size.height * 0.11), height: (geometry.size.height * 0.11))
                                     .clipShape(Circle())
-                                Text("Kirtan Patel")
+                                Text(username)
                                     .font(.caption)
                                     .foregroundColor(.gray)
                                 Spacer()
                                 if geometry.size.width > 169 {
-                                    Text("\(100) contributions")
+                                    Text("\(totalContribution) contributions")
                                         .font(.caption)
                                         .foregroundColor(.gray)
                                 }
@@ -96,6 +99,6 @@ struct ClassicGridWidget: View {
 
 struct ClassicGridWidget_Previews: PreviewProvider {
     static var previews: some View {
-        ClassicGridWidget(light: Color.githubGreen, dark: Color.githubGreen, contribution: [])
+        ClassicGridWidget(light: Color.githubGreen, dark: Color.githubGreen, contribution: [], totalContribution: 100, userProfileURL: "", username: "")
     }
 }

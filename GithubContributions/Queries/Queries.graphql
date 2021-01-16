@@ -19,6 +19,15 @@ query getUserContributions($login: String!) {
     }
 }
 
+query getUserInfo($login: String!) {
+    user(login: $login) {
+        url
+        login
+        name
+        avatarUrl
+    }
+}
+
 query getCurrentUser{
   viewer {
     url

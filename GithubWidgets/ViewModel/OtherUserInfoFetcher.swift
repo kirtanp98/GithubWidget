@@ -1,14 +1,14 @@
 //
-//  UserInfoFetcher.swift
+//  OtherUserInfoFetcher.swift
 //  GithubWidgetsExtension
 //
-//  Created by Kirtan Patel on 1/2/21.
+//  Created by Kirtan Patel on 1/16/21.
 //
 
 import Foundation
 import Apollo
 
-class UserInfoFetcher {
+class OtherUserInfoFetcher {
     var userName: String
     var imageURL: String
     
@@ -17,13 +17,13 @@ class UserInfoFetcher {
         imageURL = ""
     }
 
-    func getCurrentUserInfo(completionHanlder:  @escaping ((_ userInfo: Bool) -> Void) ) {
-        Network.shared.apollo.fetch(query: GetCurrentUserQuery()) { result in
+    func getOtherUserInfo(user: String, completionHanlder:  @escaping ((_ userInfo: Bool) -> Void) ) {
+        Network.shared.apollo.fetch(query: GetUserInfoQuery(login: user)) { result in
             switch result {
             case .success(let graphQLResult):
                 DispatchQueue.main.async {
-                    self.userName = graphQLResult.data?.viewer.login ?? ""
-                    self.imageURL = graphQLResult.data?.viewer.avatarUrl ?? ""
+                    self.userName = graphQLResult.data?.user?.name ?? ""
+                    self.imageURL = graphQLResult.data?.user?.avatarUrl ?? ""
                     completionHanlder(true)
                 }
             case .failure(let error):

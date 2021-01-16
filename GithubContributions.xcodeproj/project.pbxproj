@@ -55,6 +55,7 @@
 		A07B756D25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */; };
 		A07B756E25AA3A800005D68D /* AccColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */; };
 		A07B757925AA40300005D68D /* AddAccentColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B757825AA40300005D68D /* AddAccentColorView.swift */; };
+		A07F061B25B34B9D004A53ED /* OtherUserInfoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F061A25B34B9D004A53ED /* OtherUserInfoFetcher.swift */; };
 		A0A91AFA2597CAAE0039E1A0 /* AddBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */; };
 		A0A91AFE2597CB680039E1A0 /* Background+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */; };
 		A0A91AFF2597CB680039E1A0 /* Background+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */; };
@@ -169,6 +170,7 @@
 		A07B756725AA3A800005D68D /* AccColor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccColor+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A07B756825AA3A800005D68D /* AccColor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccColor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A07B757825AA40300005D68D /* AddAccentColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccentColorView.swift; sourceTree = "<group>"; };
+		A07F061A25B34B9D004A53ED /* OtherUserInfoFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserInfoFetcher.swift; sourceTree = "<group>"; };
 		A0A91AF92597CAAE0039E1A0 /* AddBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBackgroundView.swift; sourceTree = "<group>"; };
 		A0A91AFC2597CB680039E1A0 /* Background+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A0A91AFD2597CB680039E1A0 /* Background+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Background+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -308,6 +310,17 @@
 			path = "Accent Color";
 			sourceTree = "<group>";
 		};
+		A07F061925B34B84004A53ED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */,
+				A0374D40259E4F01003D6D42 /* CoreDataFetcher.swift */,
+				A0F921D425A0ED1700BA66F5 /* UserInfoFetcher.swift */,
+				A07F061A25B34B9D004A53ED /* OtherUserInfoFetcher.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A0C248002594EF72001F9C51 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,14 +453,12 @@
 		A0DA35A7258FD216009F3038 /* GithubWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				A07F061925B34B84004A53ED /* ViewModel */,
 				A0510346258FF6C400E2CC60 /* Widgets */,
 				A0DA35A8258FD216009F3038 /* GithubWidgets.swift */,
 				A0DA35AA258FD216009F3038 /* GithubWidgets.intentdefinition */,
 				A0DA35AB258FD218009F3038 /* Assets.xcassets */,
 				A0DA35AD258FD218009F3038 /* Info.plist */,
-				A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */,
-				A0374D40259E4F01003D6D42 /* CoreDataFetcher.swift */,
-				A0F921D425A0ED1700BA66F5 /* UserInfoFetcher.swift */,
 			);
 			path = GithubWidgets;
 			sourceTree = "<group>";
@@ -712,6 +723,7 @@
 				A0C25EA625A533A60070EDF1 /* ClassicGridWidget.swift in Sources */,
 				A0374D3D259E4EC2003D6D42 /* IntentHandler.swift in Sources */,
 				A0DD0EF72593C0D300428149 /* CColor+CoreDataClass.swift in Sources */,
+				A07F061B25B34B9D004A53ED /* OtherUserInfoFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

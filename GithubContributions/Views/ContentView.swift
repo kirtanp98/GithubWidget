@@ -81,8 +81,6 @@ struct ContentView: View {
                             Text("Background")
                          } icon: {
                             BackgroundIcon()
-//                            Image(systemName: "sparkles")
-//                                .renderingMode(.original)
                         }
                     }
                     NavigationLink(destination: AccentColorGridView()) {
@@ -90,7 +88,7 @@ struct ContentView: View {
                             Text("Accent Colors")
                          } icon: {
                             Image(systemName: "textformat")
-                                .foregroundColor(.blue)
+                                .foregroundColor(Color("cerise"))
                         }
                     }
                 }

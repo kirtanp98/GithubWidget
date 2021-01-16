@@ -32,7 +32,7 @@ struct AddAccentColorView: View {
                     VStack(alignment: .center){
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 100) {
-                                ClassicGridWidget(background: backgrounds[backgroundPicker], light: palettes[colorPicker].lightColorArray, dark: palettes[colorPicker].darkColorArray, contribution: gen.contributions)
+                                ClassicGridWidget(background: backgrounds[backgroundPicker], light: palettes[colorPicker].lightColorArray, dark: palettes[colorPicker].darkColorArray, contribution: gen.contributions, totalContribution: 100, username: "user")
                                     .frame(width:169, height: 169)
                                     .cornerRadius(20)
                                     .padding(.leading)
