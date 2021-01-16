@@ -11,6 +11,17 @@ class IntentHandler: INExtension, ConfigurationIntentHandling, NormalConfigurati
     
     let fetcher = DataFetcher()
     
+    func provideAccentColorOptionsCollection(for intent: NormalConfigurationIntent, with completion: @escaping (INObjectCollection<AccentColor>?, Error?) -> Void) {
+        let colors = fetcher.getAccentColors()
+        
+        let transformedColor: [AccentColor] = colors.map { AccentColor(identifier: $0.wrappedId.uuidString, display: $0.wrappedName) }
+        
+        let collection = INObjectCollection(items: transformedColor)
+
+        completion(collection, nil)
+    }
+    
+    
     func provideColorPaletteOptionsCollection(for intent: NormalConfigurationIntent, with completion: @escaping (INObjectCollection<ColorP>?, Error?) -> Void) {
         let colors = fetcher.getColors()
         

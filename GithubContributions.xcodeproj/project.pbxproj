@@ -274,6 +274,7 @@
 		A06E68E2259A60DB001E6E09 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A0CA68BF258EB01B009847DF /* SquareView.swift */,
 				A06E68E3259A63FF001E6E09 /* CalendarWidget.swift */,
 				A0374D58259E5862003D6D42 /* URLExtension.swift */,
 				A0C25EA425A533A60070EDF1 /* ClassicGridWidget.swift */,
@@ -434,7 +435,6 @@
 				A07B757325AA3F8E0005D68D /* Palette */,
 				A0C248002594EF72001F9C51 /* Util */,
 				A0CA6882258E570B009847DF /* ContentView.swift */,
-				A0CA68BF258EB01B009847DF /* SquareView.swift */,
 				A0C248082594F029001F9C51 /* BaseView.swift */,
 			);
 			path = Views;

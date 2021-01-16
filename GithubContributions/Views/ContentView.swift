@@ -29,7 +29,8 @@ struct ContentView: View {
                             Text("Please be connected to the internet and restart the app")
                                 .font(.caption)
                                 .foregroundColor(.gray)
-                        }
+                        }.frame(maxWidth: .infinity)
+                        .listRowInsets(EdgeInsets())
                     }
                     else if !authManager.loginedIn {
                         Button(action: {
@@ -115,6 +116,10 @@ struct ContentView: View {
                     Button("Restore Purchases") {
                         print("restoring")
                     }
+                }
+                
+                Section(header: Text("Credits")) {
+                    Text("Libraries used")
                 }
                 
                 Section(header: Text("Contact")) {

@@ -15,6 +15,7 @@ struct ClassicGridWidget: View {
     var background: Background?
     var light: [Color]
     var dark: [Color]
+    var accentColor: AccColor?
     
     @State var width: CGFloat = 1
     @State var height: CGFloat = 1
@@ -50,6 +51,7 @@ struct ClassicGridWidget: View {
                                         .clipShape(Circle())
                                     Text(username)
                                         .font(.caption)
+                                        .fontWeight(.semibold)
                                         .foregroundColor(.gray)
                                     Spacer()
                                     if geometry.size.width > 169 {
@@ -74,7 +76,6 @@ struct ClassicGridWidget: View {
                                 }
                             }
                             .frame(height: showDetails ? remain * (1-ratio) : remain)
-//                            .frame(height: remain)// * (1-ratio))
                             if showDetails {
                                 Spacer().frame(height: geometry.size.height * spacing)
                             }

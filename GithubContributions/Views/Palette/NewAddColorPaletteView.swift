@@ -12,8 +12,12 @@ struct NewAddColorPaletteView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     @FetchRequest(entity: Background.entity(), sortDescriptors: []) var backgrounds: FetchedResults<Background>
+    @FetchRequest(entity: AccColor.entity(), sortDescriptors: []) var accentColors: FetchedResults<AccColor>
+
+    @ObservedObject var gen = ContributionGenerator()
 
     @State var picker = 0
+    @State var accentColorPicker = 0
     @State var name = ""
     @State var customizeDarkMode = false
     @State var lightColors: [Color] = Color.githubGreen
@@ -31,21 +35,21 @@ struct NewAddColorPaletteView: View {
                     }
                 ){
                     VStack(alignment: .center){
-                        TabView {
-                            Text("hi")
-                                .font(.body)
-                                .foregroundColor(.black)
-                                .frame(width: 100, height: 150)
-                                .background(Color.blue)
-                            
-                            Text("hi")
-                                .font(.body)
-                                .foregroundColor(.black)
-                                .frame(width: 100, height: 150)
-                                .background(Color.red)
-                        }.tabViewStyle(PageTabViewStyle())
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack(spacing: 100) {
+                                ClassicGridWidget(background: backgrounds[picker], light: lightColors, dark: (customizeDarkMode ? darkColors : lightColors), contribution: gen.contributions, totalContribution: 100, username: "user")
+                                    .frame(width:169, height: 169)
+                                    .cornerRadius(20)
+                                    .padding(.leading)
+
+                                CalendarWidget(background: backgrounds[picker], light: lightColors, dark: (customizeDarkMode ? darkColors : lightColors), contribution: gen.contributions)
+                                    .frame(width:169, height: 169)
+                                    .cornerRadius(20)
+                                    .padding(.trailing)
+                                
+                            }
+                        }
                     }.frame(maxWidth: .infinity)
-                    .background(Color.red)
                     
                     Picker("Background", selection: $picker) {
                         ForEach(0 ..< backgrounds.count) { index in
@@ -80,6 +84,16 @@ struct NewAddColorPaletteView: View {
                                     }
                                 }
                                 Text(backgrounds[index].wrappedName)
+                                    .padding(.leading, 10)
+                            }
+                        }
+                    }
+                    
+                    Picker("Accent Colors", selection: $accentColorPicker) {
+                        ForEach(0 ..< accentColors.count) { index in
+                            HStack {
+                                SplitCircle(colorOne: accentColors[index].wrappedLight, colorTwo: accentColors[index].wrappedDark, size: 10)
+                                Text(accentColors[index].wrappedName)
                                     .padding(.leading, 10)
                             }
                         }
@@ -216,6 +230,9 @@ struct NewAddColorPaletteView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Add Palette")
             .listStyle(InsetGroupedListStyle())
+            .onAppear {
+                gen.generate()
+            }
         }
     }
 }

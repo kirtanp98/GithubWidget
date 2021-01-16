@@ -31,6 +31,7 @@ struct ClassicProvider: IntentTimelineProvider {
         var darkColor = Color.githubGreen
         
         var widgetBackground: Background? = nil
+        var accentColor: AccColor? = nil
         
         let showDetails = configuration.details?.boolValue ?? true
         
@@ -42,6 +43,12 @@ struct ClassicProvider: IntentTimelineProvider {
         if let wBackground = getBackground(for: configuration) {
             widgetBackground = wBackground
         }
+        
+        if let aColor = getAccentColor(for: configuration) {
+            accentColor = aColor
+        }
+        
+        let simpleEntry = SimpleNormalEntry(date: currentDate, configuration: configuration, contribution: [], total: 0, background: widgetBackground, light: lightColor, dark: darkColor, accentColor: .gray, profileURL: "", user: "", showDetails: true)
         
         if let userName = configuration.user {
             print(userName)
@@ -86,6 +93,14 @@ struct ClassicProvider: IntentTimelineProvider {
             }
         }
         
+    }
+    
+    func getAccentColor(for config: NormalConfigurationIntent) -> AccColor? {
+        guard let id = config.accentColor?.identifier else { return nil }
+        
+        guard let accentColor = fetcher.getAccentColorByID(uuid: id) else { return nil }
+        
+        return accentColor
     }
     
     func getColorPalette(for config: NormalConfigurationIntent) -> Palette? {

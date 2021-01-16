@@ -27,6 +27,42 @@ class DataFetcher {
         self.container = tempContainer
     }
     
+    func getAccentColors() -> [AccColor] {
+        let request = NSFetchRequest<AccColor>(entityName: "AccColor")
+        
+        do {
+            let colors = try container.viewContext.fetch(request)
+            print("Got \(colors.count) commits")
+            return colors
+        } catch {
+            print("Fetch failed")
+        }
+        
+        return []
+    }
+    
+    func getAccentColorByID(uuid: String) -> AccColor? {
+        let request = NSFetchRequest<AccColor>(entityName: "AccColor")
+        request.fetchLimit = 1
+        
+        guard let id = UUID(uuidString: uuid) else { return nil }
+        
+        request.predicate = NSPredicate(format: "id == %@", id as NSUUID)
+        
+        do {
+            let color = try container.viewContext.fetch(request)
+            if color.isEmpty {
+                return nil
+            }
+            return color[0]
+        } catch {
+            print("Error Fetching ID: \(uuid)")
+        }
+        
+        return nil
+    }
+    
+    
     func getColors() -> [Palette] {
         let request = NSFetchRequest<Palette>(entityName: "Palette")
         

@@ -12,11 +12,15 @@ struct AddBackgroundView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     @FetchRequest(entity: Palette.entity(), sortDescriptors: []) var palettes: FetchedResults<Palette>
+    @FetchRequest(entity: AccColor.entity(), sortDescriptors: []) var accentColors: FetchedResults<AccColor>
+    
+    @ObservedObject var gen = ContributionGenerator()
     
     @State var showPicker = false
     
     @State var name = ""
-    @State var picker = 0
+    @State var palettePicker = 0
+    @State var accentColorPicker = 0
     @State var isImage = false
     @State var lightMode: Color = .white
     @State var darkMode: Color = .black
@@ -27,28 +31,31 @@ struct AddBackgroundView: View {
     @State var darkModeImage: UIImage? = nil
     @State var whichImage = false
     
+//    @State var backgroundPreview: Background = Background()
+    
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Preview")) {
                     VStack(alignment: .center){
-                        TabView {
-                            Text("hi")
-                                .font(.body)
-                                .foregroundColor(.black)
-                                .frame(width: 100, height: 150)
-                                .background(Color.blue)
-                            
-                            Text("hi")
-                                .font(.body)
-                                .foregroundColor(.black)
-                                .frame(width: 100, height: 150)
-                                .background(Color.red)
-                        }.tabViewStyle(PageTabViewStyle())
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack(spacing: 100) {
+//                                ClassicGridWidget(background: backgroundPreview, light: palettes[palettePicker].lightColorArray, dark: palettes[palettePicker].darkColorArray, contribution: gen.contributions, totalContribution: 100, username: "user")
+//                                    .frame(width:169, height: 169)
+//                                    .cornerRadius(20)
+//                                    .padding(.leading)
+//
+//                                CalendarWidget(background: backgroundPreview, light: palettes[palettePicker].lightColorArray, dark: palettes[palettePicker].darkColorArray, contribution: gen.contributions)
+//                                    .frame(width:169, height: 169)
+//                                    .cornerRadius(20)
+//                                    .padding(.trailing)
+                                
+                            }
+                        }
                     }.frame(maxWidth: .infinity)
                     .background(Color.red)
-                    Picker("Palette", selection: $picker) {
+                    Picker("Palette", selection: $palettePicker) {
                         ForEach(0 ..< palettes.count) { index in
                             HStack {
                                 HStack {
@@ -57,6 +64,16 @@ struct AddBackgroundView: View {
                                     }
                                 }
                                 Text(palettes[index].wrappedName)
+                                    .padding(.leading, 10)
+                            }
+                        }
+                    }
+                    
+                    Picker("Accent Colors", selection: $accentColorPicker) {
+                        ForEach(0 ..< accentColors.count) { index in
+                            HStack {
+                                SplitCircle(colorOne: accentColors[index].wrappedLight, colorTwo: accentColors[index].wrappedDark, size: 10)
+                                Text(accentColors[index].wrappedName)
                                     .padding(.leading, 10)
                             }
                         }
@@ -73,6 +90,9 @@ struct AddBackgroundView: View {
                     Toggle("Customize Dark Mode", isOn: $customizeDarkMode.animation())
                         .padding(.horizontal)
                 }
+//                .onChange(of: isImage) { state in
+//                    <#code#>
+//                }
 
                 Section(header: Text("Customization")) {
                     if !isImage {
@@ -163,6 +183,14 @@ struct AddBackgroundView: View {
                     }
                 }
                     
+            }
+            .onAppear {
+                gen.generate()
+//                backgroundPreview.id = UUID()
+//                backgroundPreview.date = Date()
+//                backgroundPreview.isImage = false
+//                backgroundPreview.lightColor = lightMode.toData()
+//                backgroundPreview.darkColor = darkMode.toData()
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Add Background")
