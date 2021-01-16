@@ -71,8 +71,8 @@ struct ContentView: View {
                         Label {
                             Text("Color Palette")
                          } icon: {
-                            Image(systemName: "sparkles")
-                                .renderingMode(.original)
+                            PaletteIcon()
+                                .scaleEffect(0.5)
                         }
                     }
                     
@@ -80,16 +80,17 @@ struct ContentView: View {
                         Label {
                             Text("Background")
                          } icon: {
-                            Image(systemName: "sparkles")
-                                .renderingMode(.original)
+                            BackgroundIcon()
+//                            Image(systemName: "sparkles")
+//                                .renderingMode(.original)
                         }
                     }
                     NavigationLink(destination: AccentColorGridView()) {
                         Label {
                             Text("Accent Colors")
                          } icon: {
-                            Image(systemName: "sparkles")
-                                .renderingMode(.original)
+                            Image(systemName: "textformat")
+                                .foregroundColor(.blue)
                         }
                     }
                 }

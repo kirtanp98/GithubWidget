@@ -96,7 +96,7 @@ struct BackgroundItem: View {
                             .clipShape(Triangle())
                     }
                 }
-                    .shadow(radius: 2)
+//                    .shadow(radius: 2)
                 Spacer()
             }
         }

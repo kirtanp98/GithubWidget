@@ -30,6 +30,9 @@
 		A0374D5B259E5862003D6D42 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0374D58259E5862003D6D42 /* URLExtension.swift */; };
 		A0374D6B259E5DFD003D6D42 /* GithubContributions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0DD0EED2593BEEA00428149 /* GithubContributions.xcdatamodeld */; };
 		A0385C7E2593A55E00FA0369 /* ColorPaletteSwabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385C7D2593A55E00FA0369 /* ColorPaletteSwabView.swift */; };
+		A03F6F4E25B339810040DCCC /* PaletteIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F6F4D25B339810040DCCC /* PaletteIcon.swift */; };
+		A03F6F5825B33EC00040DCCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DA35AB258FD218009F3038 /* Assets.xcassets */; };
+		A03F6F5E25B33FC10040DCCC /* BackgroundIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F6F5D25B33FC10040DCCC /* BackgroundIcon.swift */; };
 		A051033A258FE6DC00E2CC60 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = A0510339258FE6DC00E2CC60 /* Apollo */; };
 		A0510343258FF6A400E2CC60 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = A0510342258FF6A400E2CC60 /* BetterSafariView */; };
 		A051034B25901E3E00E2CC60 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A051034A25901E3E00E2CC60 /* Kingfisher */; };
@@ -75,7 +78,6 @@
 		A0DA35A4258FD216009F3038 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DA35A3258FD216009F3038 /* WidgetKit.framework */; };
 		A0DA35A6258FD216009F3038 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DA35A5258FD216009F3038 /* SwiftUI.framework */; };
 		A0DA35A9258FD216009F3038 /* GithubWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA35A8258FD216009F3038 /* GithubWidgets.swift */; };
-		A0DA35AC258FD218009F3038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DA35AB258FD218009F3038 /* Assets.xcassets */; };
 		A0DA35AE258FD218009F3038 /* GithubWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A0DA35AA258FD216009F3038 /* GithubWidgets.intentdefinition */; };
 		A0DA35AF258FD218009F3038 /* GithubWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A0DA35AA258FD216009F3038 /* GithubWidgets.intentdefinition */; };
 		A0DA35B2258FD218009F3038 /* GithubWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0DA35A1258FD216009F3038 /* GithubWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -153,6 +155,8 @@
 		A0374D58259E5862003D6D42 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		A0374D68259E5CE5003D6D42 /* PaletteIntent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PaletteIntent.entitlements; sourceTree = "<group>"; };
 		A0385C7D2593A55E00FA0369 /* ColorPaletteSwabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteSwabView.swift; sourceTree = "<group>"; };
+		A03F6F4D25B339810040DCCC /* PaletteIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteIcon.swift; sourceTree = "<group>"; };
+		A03F6F5D25B33FC10040DCCC /* BackgroundIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundIcon.swift; sourceTree = "<group>"; };
 		A051032E258FE60700E2CC60 /* GithubContributions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubContributions.entitlements; sourceTree = "<group>"; };
 		A0510331258FE61100E2CC60 /* GithubWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		A051033D258FEAD900E2CC60 /* UserDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataFetcher.swift; sourceTree = "<group>"; };
@@ -246,6 +250,15 @@
 				A0374D34259E4E77003D6D42 /* Info.plist */,
 			);
 			path = PaletteIntent;
+			sourceTree = "<group>";
+		};
+		A03F6F4C25B3396E0040DCCC /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				A03F6F4D25B339810040DCCC /* PaletteIcon.swift */,
+				A03F6F5D25B33FC10040DCCC /* BackgroundIcon.swift */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		A0510346258FF6C400E2CC60 /* Widgets */ = {
@@ -402,6 +415,7 @@
 		A0CA68BE258EB00A009847DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A03F6F4C25B3396E0040DCCC /* Icons */,
 				A07B757525AA3FC70005D68D /* Accent Color */,
 				A07B757425AA3F9F0005D68D /* Background */,
 				A07B757325AA3F8E0005D68D /* Palette */,
@@ -576,7 +590,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0DA35AC258FD218009F3038 /* Assets.xcassets in Resources */,
+				A03F6F5825B33EC00040DCCC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +657,7 @@
 				A0E930DD25AE731F00D4EFCC /* ContributionGenerator.swift in Sources */,
 				A0385C7E2593A55E00FA0369 /* ColorPaletteSwabView.swift in Sources */,
 				A0C248092594F029001F9C51 /* BaseView.swift in Sources */,
+				A03F6F5E25B33FC10040DCCC /* BackgroundIcon.swift in Sources */,
 				A06A78F1259A4640004431F2 /* NewAddColorPaletteView.swift in Sources */,
 				A0DD0EEA2593AA6400428149 /* BackgroundListView.swift in Sources */,
 				A0CA6883258E570B009847DF /* ContentView.swift in Sources */,
@@ -663,6 +678,7 @@
 				A0DD0EF82593C0D300428149 /* CColor+CoreDataProperties.swift in Sources */,
 				A07B756925AA3A800005D68D /* AccColor+CoreDataClass.swift in Sources */,
 				A0A91AFF2597CB680039E1A0 /* Background+CoreDataProperties.swift in Sources */,
+				A03F6F4E25B339810040DCCC /* PaletteIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
