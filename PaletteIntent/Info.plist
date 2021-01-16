@@ -30,8 +30,8 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
-				<string>NormalConfigurationIntent</string>
 				<string>ConfigurationIntent</string>
+				<string>NormalConfigurationIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>

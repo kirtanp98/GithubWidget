@@ -36,6 +36,7 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>
+		<string>NormalConfigurationIntent</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

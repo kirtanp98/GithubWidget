@@ -14,11 +14,11 @@ struct ClassicProvider: IntentTimelineProvider {
     let fetcher = DataFetcher()
     
     func placeholder(in context: Context) -> SimpleNormalEntry {
-        SimpleNormalEntry(date: Date(), configuration: NormalConfigurationIntent(), contribution: [], total: 100, background: nil, light: Color.githubGreen, dark: Color.githubGreen, accentColor: .gray, profileURL: "", user: "")
+        SimpleNormalEntry(date: Date(), configuration: NormalConfigurationIntent(), contribution: [], total: 100, background: nil, light: Color.githubGreen, dark: Color.githubGreen, accentColor: .gray, profileURL: "", user: "", showDetails: true)
     }
     
     func getSnapshot(for configuration: NormalConfigurationIntent, in context: Context, completion: @escaping (SimpleNormalEntry) -> ()) {
-        let entry = SimpleNormalEntry(date: Date(), configuration: configuration, contribution: [], total: 100, background: nil, light: Color.githubGreen, dark: Color.githubGreen, accentColor: .gray, profileURL: "", user: "")
+        let entry = SimpleNormalEntry(date: Date(), configuration: configuration, contribution: [], total: 100, background: nil, light: Color.githubGreen, dark: Color.githubGreen, accentColor: .gray, profileURL: "", user: "", showDetails: true)
         completion(entry)
     }
     
@@ -31,6 +31,8 @@ struct ClassicProvider: IntentTimelineProvider {
         var darkColor = Color.githubGreen
         
         var widgetBackground: Background? = nil
+        
+        let showDetails = configuration.details?.boolValue ?? true
         
         if let colors = getColorPalette(for: configuration) {
             lightColor = colors.lightColorArray
@@ -49,7 +51,7 @@ struct ClassicProvider: IntentTimelineProvider {
                     let fetchUser = UserDataFetcher();
                     
                     fetchUser.fetchData(user: currentUser.userName) { contributions in
-                        let entry = SimpleNormalEntry(date: currentDate, configuration: configuration, contribution: contributions, total: fetchUser.totalContribution, background: widgetBackground, light: lightColor, dark: darkColor, accentColor: .gray, profileURL: currentUser.imageURL, user: currentUser.realName)
+                        let entry = SimpleNormalEntry(date: currentDate, configuration: configuration, contribution: contributions, total: fetchUser.totalContribution, background: widgetBackground, light: lightColor, dark: darkColor, accentColor: .gray, profileURL: currentUser.imageURL, user: currentUser.realName, showDetails: showDetails)
                         entries.append(entry)
                         let timeline = Timeline(entries: entries, policy: .atEnd)
                         completion(timeline)
@@ -61,7 +63,7 @@ struct ClassicProvider: IntentTimelineProvider {
                 
                 fetchUserInfo.getOtherUserInfo(user: userName) { state in
                     fetchUser.fetchData(user: userName) { contributions in
-                        let entry = SimpleNormalEntry(date: currentDate, configuration: configuration, contribution: contributions, total: fetchUser.totalContribution, background: widgetBackground, light: lightColor, dark: darkColor, accentColor: .gray, profileURL: fetchUserInfo.imageURL, user: fetchUserInfo.userName)
+                        let entry = SimpleNormalEntry(date: currentDate, configuration: configuration, contribution: contributions, total: fetchUser.totalContribution, background: widgetBackground, light: lightColor, dark: darkColor, accentColor: .gray, profileURL: fetchUserInfo.imageURL, user: fetchUserInfo.userName, showDetails: showDetails)
                         entries.append(entry)
                         let timeline = Timeline(entries: entries, policy: .atEnd)
                         completion(timeline)
@@ -76,7 +78,7 @@ struct ClassicProvider: IntentTimelineProvider {
                 let fetchUser = UserDataFetcher();
                 
                 fetchUser.fetchData(user: currentUser.userName) { contributions in
-                    let entry = SimpleNormalEntry(date: currentDate, configuration: configuration, contribution: contributions, total: fetchUser.totalContribution, background: widgetBackground, light: lightColor, dark: darkColor, accentColor: .gray, profileURL: currentUser.imageURL, user: currentUser.userName)
+                    let entry = SimpleNormalEntry(date: currentDate, configuration: configuration, contribution: contributions, total: fetchUser.totalContribution, background: widgetBackground, light: lightColor, dark: darkColor, accentColor: .gray, profileURL: currentUser.imageURL, user: currentUser.userName, showDetails: showDetails)
                     entries.append(entry)
                     let timeline = Timeline(entries: entries, policy: .atEnd)
                     completion(timeline)
@@ -115,6 +117,7 @@ struct SimpleNormalEntry: TimelineEntry {
     let accentColor: Color
     let profileURL: String
     let user: String
+    let showDetails: Bool
 }
 
 
@@ -122,7 +125,7 @@ struct NormalGithubWidgetsEntryView : View {
     var entry: ClassicProvider.Entry
     
     var body: some View {
-        ClassicGridWidget(background: entry.background, light: entry.light, dark: entry.dark, contribution: entry.contribution, totalContribution: entry.total, userProfileURL: entry.profileURL, username: entry.user)
+        ClassicGridWidget(background: entry.background, light: entry.light, dark: entry.dark, contribution: entry.contribution, totalContribution: entry.total, userProfileURL: entry.profileURL, username: entry.user, showDetails: entry.showDetails)
     }
 }
 

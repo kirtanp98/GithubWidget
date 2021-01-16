@@ -13,20 +13,19 @@ struct ClassicGridWidget: View {
     @Environment(\.colorScheme) var colorScheme
     
     var background: Background?
-    
     var light: [Color]
     var dark: [Color]
     
     @State var width: CGFloat = 1
     @State var height: CGFloat = 1
     @State var remain: CGFloat = 1
-    
     @State var totalSquares: Int = 1
     
     @State var contribution: [Contribute]
     @State var totalContribution: Int
     @State var userProfileURL: String = "https://avatars0.githubusercontent.com/u/28634279?u=465dcd4d6b590ff241c6257bd4baf7134264ea39&v=4"
     @State var username: String
+    @State var showDetails = true
     
     @State var columns = Array(repeating: GridItem(.flexible(), spacing: 2, alignment: .center), count: 7)
     
@@ -43,22 +42,24 @@ struct ClassicGridWidget: View {
                         BackgroundWidgetView(background: background, width: geometry.size.width, height: geometry.size.height)
                         
                         VStack(alignment: .center, spacing: 0) {
-                            HStack(spacing: 5) {
-                                KFImage(URL(string: userProfileURL)!)
-                                    .resizable()
-                                    .frame(width: (geometry.size.height * 0.11), height: (geometry.size.height * 0.11))
-                                    .clipShape(Circle())
-                                Text(username)
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
-                                Spacer()
-                                if geometry.size.width > 169 {
-                                    Text("\(totalContribution) contributions")
+                            if showDetails {
+                                HStack(spacing: 5) {
+                                    KFImage(URL(string: userProfileURL)!)
+                                        .resizable()
+                                        .frame(width: (geometry.size.height * 0.11), height: (geometry.size.height * 0.11))
+                                        .clipShape(Circle())
+                                    Text(username)
                                         .font(.caption)
                                         .foregroundColor(.gray)
+                                    Spacer()
+                                    if geometry.size.width > 169 {
+                                        Text("\(totalContribution) contributions")
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                    }
                                 }
+                                .frame(height: remain * ratio)
                             }
-                            .frame(height: remain * ratio)
                             LazyHGrid(rows: columns, alignment: .center, spacing: 2){
                                 ForEach(contribution.suffix(totalSquares), id: \.date) { item in
                                     if item.empty {
@@ -72,8 +73,11 @@ struct ClassicGridWidget: View {
                                     
                                 }
                             }
-                            .frame(height: remain * (1-ratio))
-                            Spacer().frame(height: geometry.size.height * spacing)
+                            .frame(height: showDetails ? remain * (1-ratio) : remain)
+//                            .frame(height: remain)// * (1-ratio))
+                            if showDetails {
+                                Spacer().frame(height: geometry.size.height * spacing)
+                            }
                         }
                         .frame(width: width * 0.9)
                     }
@@ -83,7 +87,8 @@ struct ClassicGridWidget: View {
             .onAppear {
                 remain = geometry.size.height - (geometry.size.height * spacing)
                 width = geometry.size.width * 0.9
-                height = remain * (1-ratio)
+            
+                height = showDetails ? remain * (1-ratio) : remain
                 
                 let squareLength = floor(height/7)
                 
